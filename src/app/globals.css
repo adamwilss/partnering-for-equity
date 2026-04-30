@@ -5,6 +5,20 @@
   --color-foreground: #f8fafc;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-orbit: orbit 20s linear infinite;
+  --animate-spin-slow: spin 30s linear infinite;
+  --animate-glow-pulse: glow-pulse 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(99,102,241,0.3); }
+  50% { box-shadow: 0 0 40px rgba(99,102,241,0.6), 0 0 80px rgba(168,85,247,0.3); }
 }
 
 * {
@@ -23,34 +37,28 @@ body {
 ::-webkit-scrollbar {
   width: 6px;
 }
-
 ::-webkit-scrollbar-track {
   background: #020617;
 }
-
 ::-webkit-scrollbar-thumb {
   background: rgba(99, 102, 241, 0.3);
   border-radius: 3px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(99, 102, 241, 0.5);
 }
 
-/* Selection */
 ::selection {
   background: rgba(99, 102, 241, 0.3);
   color: white;
 }
 
-/* Glass card utility */
 .glass-card {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
 }
 
-/* Gradient text utility */
 .gradient-text {
   background: linear-gradient(to right, #818cf8, #c084fc, #818cf8);
   background-size: 200% auto;
@@ -65,19 +73,26 @@ body {
   50% { background-position: 200% center; }
 }
 
-/* Pulse animation delays */
-.animate-pulse-delay-1000 {
-  animation-delay: 1s;
+/* Glow border */
+.glow-border {
+  position: relative;
 }
-
-/* Fade-in utility for scroll animations */
-.fade-in-up {
+.glow-border::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(99,102,241,0.4), transparent, rgba(168,85,247,0.4));
+  z-index: -1;
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition: opacity 0.5s;
+}
+.glow-border:hover::after {
+  opacity: 1;
 }
 
-.fade-in-up.visible {
-  opacity: 1;
-  transform: translateY(0);
+/* Text reveal mask */
+.text-reveal-mask {
+  mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
 }

@@ -2,13 +2,12 @@ export const siteContent = {
   navbar: {
     logo: "Partnering for Equity",
     links: [
-      { label: "How It Works", href: "#how-it-works" },
-      { label: "For Founders", href: "#founders" },
-      { label: "For Providers", href: "#providers" },
-      { label: "Features", href: "#features" },
-      { label: "FAQ", href: "#faq" },
+      { label: "How It Works", href: "/how-it-works" },
+      { label: "For Founders", href: "/founders" },
+      { label: "For Providers", href: "/providers" },
+      { label: "About", href: "/about" },
     ],
-    cta: { label: "Get Started", href: "#cta" },
+    cta: { label: "Get Started", href: "/founders" },
   },
 
   hero: {
