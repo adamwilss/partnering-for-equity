@@ -14,7 +14,7 @@ export default function AnimatedDivider({
   duration = 0.8,
 }: AnimatedDividerProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: false, margin: "-50px" });
 
   return (
     <div ref={ref} className={`overflow-hidden ${className}`}>

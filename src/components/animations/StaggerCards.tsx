@@ -13,7 +13,7 @@ export default function StaggerCards({
   children,
   className = "",
   staggerDelay = 0.15,
-  once = true,
+  once = false,
 }: StaggerCardsProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once, margin: "-50px" });

@@ -36,7 +36,7 @@ export default function FoundersPage() {
 
           <AssembleText
             text="Build Without Burn"
-            className="text-5xl sm:text-6xl md:text-8xl font-black text-white tracking-tighter mb-6 block"
+            className="text-4xl sm:text-5xl lg:text-7xl font-black text-white tracking-tighter mb-6 block"
           />
 
           <motion.p
@@ -82,7 +82,7 @@ export default function FoundersPage() {
               key={s.label}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ delay: i * 0.12, duration: 0.5 }}
               className="text-center"
             >

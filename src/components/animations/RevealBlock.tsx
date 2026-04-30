@@ -24,7 +24,7 @@ export default function RevealBlock({
   delay = 0,
   direction = "up",
   duration = 0.7,
-  once = true,
+  once = false,
 }: RevealBlockProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once, margin: "-80px" });

@@ -61,7 +61,7 @@ export default function ProvidersPage() {
 
           <AssembleText
             text="Your Skills Are Worth More"
-            className="text-5xl sm:text-6xl md:text-8xl font-black text-white tracking-tighter mb-6 block"
+            className="text-4xl sm:text-5xl lg:text-7xl font-black text-white tracking-tighter mb-6 block"
           />
 
           <motion.p
@@ -116,14 +116,14 @@ export default function ProvidersPage() {
                   className="absolute top-0 left-0 h-full rounded-full bg-gradient-to-r from-emerald-500 to-teal-500"
                   initial={{ width: "0%" }}
                   whileInView={{ width: "65%" }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false }}
                   transition={{ duration: 1.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
                 />
                 <motion.div
                   className="absolute top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-white shadow-lg shadow-emerald-500/20 border-2 border-emerald-400"
                   initial={{ left: "0%" }}
                   whileInView={{ left: "65%" }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false }}
                   transition={{ duration: 1.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
                 />
               </div>
@@ -260,7 +260,7 @@ export default function ProvidersPage() {
                 key={perk}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ delay: i * 0.08, duration: 0.4 }}
                 className="px-5 py-2.5 rounded-full bg-emerald-500/5 border border-emerald-500/10 text-emerald-300/80 text-sm font-medium"
               >

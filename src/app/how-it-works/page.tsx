@@ -78,7 +78,7 @@ export default function HowItWorksPage() {
 
           <AssembleText
             text="How It Works"
-            className="text-6xl sm:text-7xl md:text-9xl font-black text-white tracking-tighter mb-8 block"
+            className="text-5xl sm:text-6xl lg:text-8xl font-black text-white tracking-tighter mb-8 block"
           />
 
           <motion.p
@@ -122,7 +122,7 @@ export default function HowItWorksPage() {
                       key={field}
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
+                      viewport={{ once: false }}
                       transition={{ delay: i * 0.12, duration: 0.4 }}
                       className="flex items-center gap-3 text-sm"
                     >
@@ -160,7 +160,7 @@ export default function HowItWorksPage() {
                     }}
                     initial={{ scaleX: 0, opacity: 0 }}
                     whileInView={{ scaleX: 1, opacity: 1 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false }}
                     transition={{ delay: 0.3 + j * 0.2, duration: 0.8 }}
                   />
                 ))}
@@ -186,7 +186,7 @@ export default function HowItWorksPage() {
                     key={item}
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false }}
                     transition={{ delay: i * 0.15, duration: 0.3 }}
                     className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.04] text-xs text-white/50 text-center"
                   >
@@ -210,7 +210,7 @@ export default function HowItWorksPage() {
                         key={b}
                         initial={{ opacity: 0, x: -10 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false }}
                         transition={{ delay: j * 0.1 }}
                         className="flex items-center gap-3 text-white/55 text-sm"
                       >
@@ -261,7 +261,7 @@ export default function HowItWorksPage() {
                     className="h-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500"
                     initial={{ width: "0%" }}
                     whileInView={{ width: `${factor.pct}%` }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false }}
                     transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
                   />
                 </div>

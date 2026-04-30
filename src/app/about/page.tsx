@@ -54,7 +54,7 @@ export default function AboutPage() {
 
           <AssembleText
             text="Partners in Growth"
-            className="text-6xl sm:text-7xl md:text-9xl font-black text-white tracking-tighter mb-8 block"
+            className="text-5xl sm:text-6xl lg:text-8xl font-black text-white tracking-tighter mb-8 block"
           />
 
           <motion.p
@@ -217,7 +217,7 @@ export default function AboutPage() {
                 key={stat.label}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
                 className="relative text-center"
               >
