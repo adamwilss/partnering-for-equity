@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Partnering for Equity
+
+The AI-powered platform connecting startup founders with world-class service providers — trading skills for equity and building the future, together.
+
+![Next.js](https://img.shields.io/badge/Next.js-16.2-black?logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38bdf8?logo=tailwindcss)
+![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel)
+
+## Overview
+
+Partnering for Equity is a platform that enables:
+
+- **Founders** to access elite talent without burning runway — pay service providers in equity instead of cash
+- **Service Providers** (developers, designers, marketers) to earn equity in promising startups while doing work they love
+
+Our AI matching engine analyzes skills, equity preferences, culture fit, and industry focus to create partnerships that thrive.
+
+## Tech Stack
+
+| Technology | Purpose |
+|-----------|---------|
+| [Next.js 16](https://nextjs.org/) | React framework (App Router) |
+| [TypeScript](https://www.typescriptlang.org/) | Type safety |
+| [Tailwind CSS 4](https://tailwindcss.com/) | Utility-first styling |
+| [Vercel](https://vercel.com/) | Hosting & deployment |
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js 18+
+- npm
+
+### Local Development
 
 ```bash
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/
+│   ├── layout.tsx          # Root layout (metadata, fonts, Navbar, Footer)
+│   ├── page.tsx            # Main page composing all sections
+│   └── globals.css         # Tailwind + custom styles
+├── components/
+│   ├── ui/                 # Reusable primitives (Button, Badge, Accordion, etc.)
+│   ├── layout/             # Navbar & Footer
+│   └── sections/           # Page sections (Hero, HowItWorks, FAQ, etc.)
+├── content/
+│   └── siteContent.ts      # All website content in one place
+└── hooks/
+    └── useScrollAnimation.ts  # Intersection Observer hook for scroll animations
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is configured for zero-config deployment on [Vercel](https://vercel.com/).
 
-## Deploy on Vercel
+1. Push to the `main` branch on GitHub
+2. Import the repo in Vercel
+3. Vercel auto-detects Next.js and deploys
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Content Editing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+All website text is centralized in `src/content/siteContent.ts`. To update any section's content, edit that file — no need to touch components.
+
+## License
+
+Private
