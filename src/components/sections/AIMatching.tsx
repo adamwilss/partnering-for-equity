@@ -24,15 +24,15 @@ export default function AIMatching() {
           {/* Left: text */}
           <div>
             <Badge className="mb-4">{badge}</Badge>
-            <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight mb-6 whitespace-nowrap">
               {headline}
             </h2>
-            <p className="text-white/50 leading-relaxed text-base md:text-lg mb-8">
+            <p className="text-slate-500 leading-relaxed text-base md:text-lg mb-8">
               {description}
             </p>
             <ul className="space-y-3">
               {features.map((f) => (
-                <li key={f} className="flex items-center gap-3 text-white/60">
+                <li key={f} className="flex items-center gap-3 text-slate-600">
                   <span className="w-5 h-5 rounded-full bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center flex-shrink-0">
                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="2" className="text-indigo-400">
                       <polyline points="1,5 4,8 9,2" />

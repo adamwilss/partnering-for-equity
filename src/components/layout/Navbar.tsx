@@ -23,14 +23,14 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-slate-950/80 backdrop-blur-xl border-b border-white/5 shadow-lg shadow-black/20"
+          ? "bg-white/80 backdrop-blur-xl border-b border-slate-200 shadow-lg shadow-slate-200"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 md:h-20">
         <Link
           href="/"
-          className="text-white font-bold text-lg tracking-tight hover:text-indigo-300 transition-colors"
+          className="text-slate-900 font-bold text-lg tracking-tight hover:text-indigo-300 transition-colors"
         >
           {logo}
         </Link>
@@ -41,7 +41,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-white/60 hover:text-white transition-colors duration-200"
+              className="text-sm text-slate-600 hover:text-slate-900 transition-colors duration-200"
             >
               {link.label}
             </Link>
@@ -51,7 +51,7 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-white p-2"
+          className="md:hidden text-slate-900 p-2"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -78,13 +78,13 @@ export default function Navbar() {
           mobileOpen ? "max-h-96 pb-4" : "max-h-0"
         }`}
       >
-        <div className="px-4 flex flex-col gap-3 bg-slate-950/95 backdrop-blur-xl border-b border-white/5">
+        <div className="px-4 flex flex-col gap-3 bg-white/95 backdrop-blur-xl border-b border-slate-200">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="text-sm text-white/60 hover:text-white py-2 transition-colors"
+              className="text-sm text-slate-600 hover:text-slate-900 py-2 transition-colors"
             >
               {link.label}
             </Link>

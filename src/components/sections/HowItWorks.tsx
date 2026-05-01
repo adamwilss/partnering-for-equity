@@ -76,9 +76,9 @@ function StepCard({
       transition={{ duration: 0.7, delay, ease: [0.33, 1, 0.68, 1] }}
       className="group relative"
     >
-      <div className="relative h-full p-8 rounded-2xl bg-white/[0.015] border border-white/[0.04] hover:border-indigo-500/15 hover:bg-white/[0.03] transition-all duration-500 overflow-hidden">
+      <div className="relative h-full p-8 rounded-2xl bg-slate-100 border border-slate-200 hover:border-indigo-500/15 hover:bg-slate-50 transition-all duration-500 overflow-hidden">
         {/* Large ghost number */}
-        <span className="absolute -top-2 -right-2 text-8xl font-black text-white/[0.03] select-none pointer-events-none group-hover:text-white/[0.05] transition-colors duration-500">
+        <span className="absolute -top-2 -right-2 text-8xl font-black text-slate-900/[0.03] select-none pointer-events-none group-hover:text-slate-900/[0.05] transition-colors duration-500">
           {number}
         </span>
 
@@ -93,8 +93,8 @@ function StepCard({
             Step {number}
           </div>
 
-          <h3 className="text-white font-semibold text-xl mb-3">{title}</h3>
-          <p className="text-white/40 leading-relaxed text-sm">{description}</p>
+          <h3 className="text-slate-900 font-semibold text-xl mb-3">{title}</h3>
+          <p className="text-slate-500 leading-relaxed text-sm">{description}</p>
         </div>
       </div>
     </motion.div>
@@ -116,7 +116,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
         >
           <Badge className="mb-4">{badge}</Badge>
-          <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight whitespace-nowrap">
             {headline}
           </h2>
         </motion.div>

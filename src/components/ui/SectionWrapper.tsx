@@ -15,7 +15,7 @@ export default function SectionWrapper({
     <section
       id={id}
       className={`relative py-20 md:py-28 px-4 sm:px-6 lg:px-8 ${
-        dark ? "bg-slate-950" : "bg-slate-950"
+        dark ? "bg-slate-50" : "bg-slate-50"
       } ${className}`}
     >
       <div className="max-w-6xl mx-auto relative z-10">{children}</div>

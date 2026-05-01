@@ -20,7 +20,7 @@ export default function FlipCard({ front, back, className = "" }: FlipCardProps)
         </div>
         <button
           onClick={() => setFlipped(!flipped)}
-          className="mt-3 text-sm text-white/40 hover:text-white/60 transition-colors"
+          className="mt-3 text-sm text-slate-400 hover:text-slate-600 transition-colors"
         >
           {flipped ? "Show front" : "Show back"}
         </button>

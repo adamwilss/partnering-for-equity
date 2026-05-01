@@ -63,7 +63,7 @@ export default function HowItWorksPage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 bg-slate-950">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 bg-slate-50">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_30%,rgba(6,182,212,0.1),rgba(255,255,255,0))]" />
         <CircuitLines />
 
@@ -71,21 +71,21 @@ export default function HowItWorksPage() {
           <motion.span
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 mb-6 tracking-wide uppercase"
+            className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold bg-cyan-500/10 border border-cyan-500/20 text-cyan-600 mb-6 tracking-wide uppercase"
           >
             The Process
           </motion.span>
 
           <AssembleText
             text="How It Works"
-            className="text-5xl sm:text-6xl lg:text-8xl font-black text-white tracking-tighter mb-8 block"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tighter mb-8 block whitespace-nowrap"
           />
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.5 }}
-            className="text-lg md:text-xl text-cyan-100/50 max-w-xl mx-auto mb-12 leading-relaxed"
+            className="text-lg md:text-xl text-cyan-600/70 max-w-xl mx-auto mb-12 leading-relaxed"
           >
             Five steps. Decades of UK acquisition experience. Zero personal guarantees.
             This is how groups are built and exits are achieved.
@@ -95,7 +95,7 @@ export default function HowItWorksPage() {
             <MagneticButton strength={0.4}>
               <Link
                 href="#steps"
-                className="inline-flex items-center px-8 py-4 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 font-medium hover:bg-cyan-500/20 hover:border-cyan-500/30 transition-all duration-300"
+                className="inline-flex items-center px-8 py-4 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-600 font-medium hover:bg-cyan-500/20 hover:border-cyan-500/30 transition-all duration-300"
               >
                 See the steps
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="ml-2">
@@ -133,7 +133,7 @@ export default function HowItWorksPage() {
                       className="flex items-center gap-3 text-sm"
                     >
                       <span className="w-2 h-2 rounded-full bg-cyan-400/40 flex-shrink-0" />
-                      <span className="text-white/50">{field}</span>
+                      <span className="text-slate-500">{field}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -203,7 +203,7 @@ export default function HowItWorksPage() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: false }}
                     transition={{ delay: i * 0.15, duration: 0.3 }}
-                    className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.04] text-xs text-white/50 text-center"
+                    className="p-3 rounded-xl bg-slate-100 border border-slate-200 text-xs text-slate-500 text-center"
                   >
                     {item}
                   </motion.div>
@@ -240,7 +240,7 @@ export default function HowItWorksPage() {
                   ))}
                 </div>
                 <div className="mt-4 h-px bg-gradient-to-r from-blue-500/20 via-cyan-500/20 to-cyan-500/20" />
-                <div className="mt-3 text-center text-xs text-white/30">Roll-up Group</div>
+                <div className="mt-3 text-center text-xs text-slate-400">Roll-up Group</div>
               </div>
             ),
           },
@@ -264,7 +264,7 @@ export default function HowItWorksPage() {
                 >
                   £10m–£50m+
                 </motion.div>
-                <div className="text-white/30 text-sm mt-2">Typical Group Exit Value</div>
+                <div className="text-slate-400 text-sm mt-2">Typical Group Exit Value</div>
                 <div className="mt-4 flex justify-center gap-2">
                   {["Private Equity", "IPO", "Strategic Sale"].map((label) => (
                     <span key={label} className="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs">
@@ -276,13 +276,13 @@ export default function HowItWorksPage() {
             ),
           },
         ].map((step, i) => (
-          <div key={step.num} className="relative min-h-[70vh] flex items-center py-16 px-4 sm:px-6 lg:px-8 border-b border-white/[0.03]">
+          <div key={step.num} className="relative min-h-[70vh] flex items-center py-16 px-4 sm:px-6 lg:px-8 border-b border-slate-200">
             <div className="max-w-6xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <span className="text-8xl font-black text-cyan-500/[0.06] select-none block -mb-8">{step.num}</span>
+                <span className="text-8xl font-black text-cyan-500/[0.08] select-none block -mb-8">{step.num}</span>
                 <RevealBlock delay={0.1}>
-                  <h2 className="text-3xl md:text-5xl font-bold text-white mt-4 mb-6 tracking-tight">{step.title}</h2>
-                  <p className="text-white/45 leading-relaxed mb-6 text-base">{step.desc}</p>
+                  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mt-4 mb-6 tracking-tight">{step.title}</h2>
+                  <p className="text-slate-500 leading-relaxed mb-6 text-base">{step.desc}</p>
                   <ul className="space-y-3">
                     {step.bullets.map((b, j) => (
                       <motion.li
@@ -291,7 +291,7 @@ export default function HowItWorksPage() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: false }}
                         transition={{ delay: j * 0.1 }}
-                        className="flex items-center gap-3 text-white/55 text-sm"
+                        className="flex items-center gap-3 text-slate-500 text-sm"
                       >
                         <span className="w-5 h-5 rounded-full bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center flex-shrink-0">
                           <svg width="8" height="8" viewBox="0 0 8 8" fill="none" stroke="currentColor" strokeWidth="2" className="text-cyan-400">
@@ -318,8 +318,8 @@ export default function HowItWorksPage() {
       <section className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-5xl mx-auto">
           <RevealBlock>
-            <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16 tracking-tight">
-              The{" "}<span className="text-cyan-400">6 Primary Strategies</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 text-center mb-16 tracking-tight whitespace-nowrap">
+              The{" "}<span className="text-cyan-600">6 Primary Strategies</span>
             </h2>
           </RevealBlock>
 
@@ -332,12 +332,12 @@ export default function HowItWorksPage() {
               { title: "Partnering for Equity Roll-Ups", pct: "Strategy 5", desc: "Our favourite. Create industry-specific roll-ups by partnering with a flagship business owner, then source and acquire 5–20 similar businesses under a jointly owned holding company." },
               { title: "Support Retiring Owners", pct: "Strategy 6", desc: "For owners who want to retire, we derisk and systemise their business, then either acquire it into our group at a higher valuation or assist in selling it for maximum proceeds." },
             ].map((factor) => (
-              <div key={factor.title} className="p-6 rounded-2xl bg-white/[0.01] border border-white/[0.03] hover:border-cyan-500/10 transition-all duration-300">
+              <div key={factor.title} className="p-6 rounded-2xl bg-slate-100 border border-slate-200 hover:border-cyan-500/20 transition-all duration-300">
                 <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-white font-bold">{factor.title}</h3>
-                  <span className="text-cyan-400 font-bold text-sm">{factor.pct}</span>
+                  <h3 className="text-slate-900 font-bold">{factor.title}</h3>
+                  <span className="text-cyan-600 font-bold text-sm">{factor.pct}</span>
                 </div>
-                <p className="text-white/35 text-sm leading-relaxed">{factor.desc}</p>
+                <p className="text-slate-500 text-sm leading-relaxed">{factor.desc}</p>
               </div>
             ))}
           </StaggerCards>
@@ -350,9 +350,9 @@ export default function HowItWorksPage() {
       <section className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-4xl mx-auto">
           <RevealBlock>
-            <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-20 tracking-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 text-center mb-20 tracking-tight whitespace-nowrap">
               From First Contact to{" "}
-              <span className="text-cyan-400">Partnership</span>
+              <span className="text-cyan-600">Partnership</span>
             </h2>
           </RevealBlock>
 
@@ -366,10 +366,10 @@ export default function HowItWorksPage() {
             ].map((item, i) => (
               <RevealBlock key={item.step} delay={i * 0.1} direction="left">
                 <div className="relative">
-                  <div className="absolute -left-[34px] top-1 w-4 h-4 rounded-full bg-cyan-500 border-2 border-slate-950" />
-                  <span className="text-cyan-400/60 text-xs font-semibold uppercase tracking-wider">{item.time}</span>
-                  <h3 className="text-white font-bold text-lg mt-1">{item.step}</h3>
-                  <p className="text-white/35 text-sm mt-1">{item.desc}</p>
+                  <div className="absolute -left-[34px] top-1 w-4 h-4 rounded-full bg-cyan-500 border-2 border-slate-50" />
+                  <span className="text-cyan-600/60 text-xs font-semibold uppercase tracking-wider">{item.time}</span>
+                  <h3 className="text-slate-900 font-bold text-lg mt-1">{item.step}</h3>
+                  <p className="text-slate-500 text-sm mt-1">{item.desc}</p>
                 </div>
               </RevealBlock>
             ))}
@@ -379,15 +379,15 @@ export default function HowItWorksPage() {
 
       {/* CTA */}
       <section className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-cyan-950/10 to-slate-950" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-cyan-50/30 to-slate-50" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent" />
         <div className="relative z-10 max-w-2xl mx-auto text-center">
-          <AssembleText text="Ready to Build Your Group?" className="text-4xl md:text-6xl font-black text-white mb-6 block" />
-          <p className="text-cyan-100/40 mb-10 text-lg">The roadmap is clear. The team is ready. Your journey starts with one conversation.</p>
+          <AssembleText text="Ready to Build Your Group?" className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 mb-6 block whitespace-nowrap" />
+          <p className="text-cyan-600/60 mb-10 text-lg">The roadmap is clear. The team is ready. Your journey starts with one conversation.</p>
           <MagneticButton strength={0.5}>
             <Link
               href="#"
-              className="inline-flex items-center px-10 py-5 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold text-lg shadow-xl shadow-cyan-500/20"
+              className="inline-flex items-center px-10 py-5 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-slate-900 font-bold text-lg shadow-xl shadow-cyan-500/20"
             >
               Get Started Now
             </Link>

@@ -17,9 +17,9 @@ import AssembleText from "@/components/animations/AssembleText";
 function PortalHero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-slate-950">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_70%_at_50%_30%,rgba(120,119,198,0.25),rgba(255,255,255,0))]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_50%_80%,rgba(147,51,234,0.1),rgba(255,255,255,0))]" />
+      <div className="absolute inset-0 bg-slate-50">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_70%_at_50%_30%,rgba(120,119,198,0.12),rgba(255,255,255,0))]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_50%_80%,rgba(147,51,234,0.06),rgba(255,255,255,0))]" />
       </div>
 
       {/* Portal */}
@@ -143,12 +143,12 @@ function PortalHero() {
         </motion.div>
 
         <motion.h1
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white mb-6 leading-[0.92]"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-slate-900 mb-6 leading-[0.92] whitespace-nowrap"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
         >
-          <span className="bg-gradient-to-b from-white via-white to-indigo-200 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-b from-slate-900 via-slate-900 to-indigo-700 bg-clip-text text-transparent">
             Partnering
           </span>
           <br />
@@ -158,7 +158,7 @@ function PortalHero() {
         </motion.h1>
 
         <motion.p
-          className="text-lg md:text-xl text-white/50 max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto mb-10 leading-relaxed"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -175,21 +175,21 @@ function PortalHero() {
         >
           <Link
             href="/founders"
-            className="group relative inline-flex items-center px-8 py-4 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium text-sm md:text-base shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:from-indigo-500 hover:to-purple-500 transition-all duration-500 overflow-hidden"
+            className="group relative inline-flex items-center px-8 py-4 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-slate-900 font-medium text-sm md:text-base shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:from-indigo-500 hover:to-purple-500 transition-all duration-500 overflow-hidden"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
             <span className="relative z-10">I&apos;m an Equity Partner</span>
           </Link>
           <Link
             href="/providers"
-            className="inline-flex items-center px-8 py-4 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-white font-medium text-sm md:text-base hover:bg-white/10 hover:border-white/20 transition-all duration-300 shadow-lg shadow-black/10"
+            className="inline-flex items-center px-8 py-4 rounded-full bg-slate-100 backdrop-blur-md border border-slate-300 text-slate-900 font-medium text-sm md:text-base hover:bg-slate-50 hover:border-slate-300 transition-all duration-300 shadow-lg shadow-slate-200"
           >
             I&apos;m a Succession Founder
           </Link>
         </motion.div>
 
         <motion.p
-          className="text-white/20 text-sm"
+          className="text-slate-200 text-sm"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.5 }}
@@ -205,7 +205,7 @@ function PortalHero() {
         animate={{ opacity: 0.6 }}
         transition={{ delay: 2 }}
       >
-        <span className="text-white/30 text-xs">Scroll to explore</span>
+        <span className="text-slate-300 text-xs">Scroll to explore</span>
         <motion.svg
           width="20"
           height="20"
@@ -213,7 +213,7 @@ function PortalHero() {
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
-          className="text-white/30"
+          className="text-slate-300"
           animate={{ y: [0, 6, 0] }}
           transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
         >
@@ -226,7 +226,7 @@ function PortalHero() {
 
 function TrustBar() {
   return (
-    <section className="py-16 px-4 border-b border-white/[0.03] bg-slate-950/80 backdrop-blur-sm">
+    <section className="py-16 px-4 border-b border-slate-200 bg-white/80 backdrop-blur-sm">
       <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
         {[
           { num: "200,000+", label: "UK Businesses Aged 60+" },
@@ -245,7 +245,7 @@ function TrustBar() {
             <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-indigo-300 to-purple-300 bg-clip-text text-transparent">
               {stat.num}
             </div>
-            <div className="text-white/30 text-sm mt-1">{stat.label}</div>
+            <div className="text-slate-300 text-sm mt-1">{stat.label}</div>
           </motion.div>
         ))}
       </div>
@@ -281,7 +281,7 @@ function WhyEquitySection() {
             <RevealBlock>
               <AssembleText
                 text="Why Partnering for Equity Wins"
-                className="text-4xl md:text-6xl font-bold text-white tracking-tight"
+                className="text-3xl md:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight whitespace-nowrap"
               />
             </RevealBlock>
           </div>
@@ -289,10 +289,10 @@ function WhyEquitySection() {
             {reasons.map((r, i) => (
               <RevealBlock key={r.title} delay={i * 0.2} direction="left">
                 <div
-                  className={`p-6 rounded-2xl bg-white/[0.02] border border-white/5 border-l-2 ${r.accent} hover:bg-white/[0.04] transition-all duration-300`}
+                  className={`p-6 rounded-2xl bg-slate-100 border border-slate-200 border-l-2 ${r.accent} hover:bg-slate-50 transition-all duration-300`}
                 >
-                  <h3 className="text-white font-semibold text-lg mb-2">{r.title}</h3>
-                  <p className="text-white/45 leading-relaxed text-sm">{r.desc}</p>
+                  <h3 className="text-slate-900 font-semibold text-lg mb-2">{r.title}</h3>
+                  <p className="text-slate-400 leading-relaxed text-sm">{r.desc}</p>
                 </div>
               </RevealBlock>
             ))}
@@ -323,9 +323,9 @@ function CashVsEquity() {
     <section className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="max-w-5xl mx-auto">
         <RevealBlock>
-          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16 tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 text-center mb-16 tracking-tight whitespace-nowrap">
             Traditional Acquisition{" "}
-            <span className="text-white/20">vs</span>{" "}
+            <span className="text-slate-200">vs</span>{" "}
             <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
               Partnering for Equity
             </span>
@@ -335,13 +335,13 @@ function CashVsEquity() {
         <div className="grid md:grid-cols-2 gap-8">
           {/* Cash side - dull */}
           <RevealBlock direction="left" delay={0.2}>
-            <div className="p-8 rounded-3xl bg-white/[0.01] border border-white/[0.04] opacity-70 hover:opacity-100 transition-opacity duration-500">
+            <div className="p-8 rounded-3xl bg-slate-50 border border-slate-200 opacity-70 hover:opacity-100 transition-opacity duration-500">
               <div className="text-4xl mb-4">🏦</div>
-              <h3 className="text-white/60 font-semibold text-xl mb-6">Traditional Acquisition</h3>
+              <h3 className="text-slate-500 font-semibold text-xl mb-6">Traditional Acquisition</h3>
               <ul className="space-y-4">
                 {cashItems.map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-white/35">
-                    <span className="w-1.5 h-1.5 rounded-full bg-white/20 flex-shrink-0" />
+                  <li key={item} className="flex items-center gap-3 text-slate-300">
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-300 flex-shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -353,12 +353,12 @@ function CashVsEquity() {
           <RevealBlock direction="right" delay={0.4}>
             <div className="p-8 rounded-3xl bg-gradient-to-br from-indigo-500/[0.05] to-purple-500/[0.05] border border-indigo-500/15 shadow-[0_0_30px_rgba(99,102,241,0.05)]">
               <div className="text-4xl mb-4">🚀</div>
-              <h3 className="text-white font-semibold text-xl mb-6 bg-gradient-to-r from-indigo-300 to-purple-300 bg-clip-text text-transparent">
+              <h3 className="text-slate-900 font-semibold text-xl mb-6 bg-gradient-to-r from-indigo-300 to-purple-300 bg-clip-text text-transparent">
                 Partnering for Equity
               </h3>
               <ul className="space-y-4">
                 {equityItems.map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-white/70">
+                  <li key={item} className="flex items-center gap-3 text-slate-500">
                     <span className="w-4 h-4 rounded-full bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center flex-shrink-0">
                       <svg width="8" height="8" viewBox="0 0 8 8" fill="none" stroke="currentColor" strokeWidth="2" className="text-indigo-400">
                         <polyline points="1,4 3,6 7,2" />
@@ -388,10 +388,10 @@ function EarningPotential() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_50%_20%,rgba(147,51,234,0.06),rgba(255,255,255,0))]" />
       <div className="max-w-5xl mx-auto relative">
         <RevealBlock>
-          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-4 tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 text-center mb-4 tracking-tight whitespace-nowrap">
             The Power of Arbitrage
           </h2>
-          <p className="text-white/40 text-center mb-16 max-w-lg mx-auto">
+          <p className="text-slate-400 text-center mb-16 max-w-lg mx-auto">
             Buy businesses for 1–3x EBITDA. Sell the group for 9–12x EBITDA.
           </p>
         </RevealBlock>
@@ -400,16 +400,16 @@ function EarningPotential() {
           {scenarios.map((s, i) => (
             <RevealBlock key={s.equity} delay={i * 0.15}>
               <TiltCard tiltAmount={8} glareColor="rgba(99,102,241,0.08)">
-                <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-indigo-500/15 transition-all duration-500 text-center group">
+                <div className="p-8 rounded-2xl bg-slate-100 border border-slate-200 hover:border-indigo-500/15 transition-all duration-500 text-center group">
                   <div className={`inline-block px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${s.color} bg-clip-text text-transparent mb-4`}>
                     Scenario {i + 1}
                   </div>
-                  <div className="text-sm text-white/40 mb-2">{s.desc}</div>
-                  <div className="text-sm text-white/30 mb-2">Buy at {s.equity} → Sell at {s.exit}</div>
+                  <div className="text-sm text-slate-400 mb-2">{s.desc}</div>
+                  <div className="text-sm text-slate-300 mb-2">Buy at {s.equity} → Sell at {s.exit}</div>
                   <div className={`text-4xl font-bold bg-gradient-to-r ${s.color} bg-clip-text text-transparent`}>
                     {s.value}
                   </div>
-                  <div className="text-white/25 text-xs mt-3">*Illustrative example</div>
+                  <div className="text-slate-300 text-xs mt-3">*Illustrative example</div>
                 </div>
               </TiltCard>
             </RevealBlock>

@@ -21,7 +21,7 @@ export default function PartnersInGrowth() {
       >
         <div className="max-w-3xl mx-auto text-center">
           <Badge className="mb-4">{badge}</Badge>
-          <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight mb-12 whitespace-nowrap">
             {headline}
           </h2>
 
@@ -30,7 +30,7 @@ export default function PartnersInGrowth() {
             <span className="absolute -top-8 left-1/2 -translate-x-1/2 text-8xl text-indigo-500/10 font-serif select-none">
               &ldquo;
             </span>
-            <p className="text-xl md:text-2xl text-white/70 leading-relaxed italic relative z-10">
+            <p className="text-xl md:text-2xl text-slate-600 leading-relaxed italic relative z-10">
               {quote}
             </p>
           </blockquote>
@@ -39,8 +39,8 @@ export default function PartnersInGrowth() {
           <div className="grid sm:grid-cols-3 gap-8">
             {values.map((value) => (
               <div key={value.label}>
-                <h4 className="text-white font-semibold mb-2">{value.label}</h4>
-                <p className="text-white/40 text-sm">{value.description}</p>
+                <h4 className="text-slate-900 font-semibold mb-2">{value.label}</h4>
+                <p className="text-slate-500 text-sm">{value.description}</p>
               </div>
             ))}
           </div>

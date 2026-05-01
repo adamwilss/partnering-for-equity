@@ -11,8 +11,8 @@ export default function CTABanner() {
   return (
     <section id="cta" className="relative py-24 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Gradient background */}
-      <div className="absolute inset-0 bg-slate-950">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-indigo-950/20 to-slate-950" />
+      <div className="absolute inset-0 bg-slate-50">
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-indigo-50/30 to-slate-950" />
       </div>
 
       {/* Glow effects */}
@@ -25,10 +25,10 @@ export default function CTABanner() {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        <h2 className="text-3xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 tracking-tight whitespace-nowrap">
           {headline}
         </h2>
-        <p className="text-lg text-white/50 mb-10 max-w-lg mx-auto leading-relaxed">
+        <p className="text-lg text-slate-500 mb-10 max-w-lg mx-auto leading-relaxed">
           {subtitle}
         </p>
         <Button

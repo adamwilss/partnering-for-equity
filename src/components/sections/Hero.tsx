@@ -12,7 +12,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Background effects */}
-      <div className="absolute inset-0 bg-slate-950">
+      <div className="absolute inset-0 bg-slate-50">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_80%,rgba(147,51,234,0.1),rgba(255,255,255,0))]" />
         {/* Grid pattern */}
@@ -38,7 +38,7 @@ export default function Hero() {
       >
         <Badge className="mb-6">{badge}</Badge>
 
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-6 leading-[0.95]">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-slate-900 mb-6 leading-[0.95]">
           {headline.split("\n").map((line, i) => (
             <span key={i}>
               {i > 0 && <br />}
@@ -49,7 +49,7 @@ export default function Hero() {
           ))}
         </h1>
 
-        <p className="text-lg md:text-xl text-white/50 max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="text-lg md:text-xl text-slate-900/50 max-w-2xl mx-auto mb-10 leading-relaxed">
           {subtitle}
         </p>
 
@@ -65,7 +65,7 @@ export default function Hero() {
           ))}
         </div>
 
-        <p className="text-white/20 text-sm">{trustText}</p>
+        <p className="text-slate-900/20 text-sm">{trustText}</p>
       </div>
     </section>
   );

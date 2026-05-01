@@ -19,7 +19,7 @@ export default function Features() {
       >
         <div className="text-center mb-16">
           <Badge className="mb-4">{badge}</Badge>
-          <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight whitespace-nowrap">
             {headline}
           </h2>
         </div>
@@ -28,15 +28,15 @@ export default function Features() {
           {cards.map((card) => (
             <div
               key={card.title}
-              className="group p-6 rounded-2xl bg-white/[0.01] border border-white/[0.04] hover:border-indigo-500/15 hover:bg-white/[0.03] transition-all duration-300 relative overflow-hidden"
+              className="group p-6 rounded-2xl bg-slate-100 border border-slate-200 hover:border-indigo-500/15 hover:bg-slate-50 transition-all duration-300 relative overflow-hidden"
             >
               {/* Subtle hover glow */}
               <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/0 to-purple-500/0 group-hover:from-indigo-500/[0.02] group-hover:to-purple-500/[0.02] transition-all duration-500" />
 
               <div className="relative z-10">
                 <div className="w-2 h-2 rounded-full bg-indigo-400/40 mb-4 group-hover:bg-indigo-400 group-hover:shadow-[0_0_8px_rgba(99,102,241,0.5)] transition-all duration-500" />
-                <h3 className="text-white font-semibold mb-2">{card.title}</h3>
-                <p className="text-white/40 text-sm leading-relaxed">
+                <h3 className="text-slate-900 font-semibold mb-2">{card.title}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed">
                   {card.description}
                 </p>
               </div>

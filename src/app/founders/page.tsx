@@ -14,9 +14,9 @@ export default function FoundersPage() {
     <>
       {/* HERO — Amber/Gold */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
-        <div className="absolute inset-0 bg-slate-950">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_30%,rgba(245,158,11,0.15),rgba(255,255,255,0))]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_40%_at_50%_70%,rgba(251,191,36,0.08),rgba(255,255,255,0))]" />
+        <div className="absolute inset-0 bg-slate-50">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_30%,rgba(245,158,11,0.12),rgba(255,255,255,0))]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_40%_at_50%_70%,rgba(251,191,36,0.06),rgba(255,255,255,0))]" />
         </div>
 
         <motion.div
@@ -29,21 +29,21 @@ export default function FoundersPage() {
           <motion.span
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold bg-amber-500/10 border border-amber-500/20 text-amber-300 mb-6 tracking-wide uppercase"
+            className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold bg-amber-500/10 border border-amber-500/20 text-amber-600 mb-6 tracking-wide uppercase"
           >
             Equity Partner Path
           </motion.span>
 
           <AssembleText
             text="Build a £10m–£50m Group"
-            className="text-4xl sm:text-5xl lg:text-7xl font-black text-white tracking-tighter mb-6 block"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tighter mb-6 block whitespace-nowrap"
           />
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.6 }}
-            className="text-lg md:text-xl text-amber-100/50 max-w-xl mx-auto mb-10 leading-relaxed"
+            className="text-lg md:text-xl text-amber-600/70 max-w-xl mx-auto mb-10 leading-relaxed"
           >
             Partner with us to acquire a series of established businesses in your sector,
             systemise them into a valuable roll-up group, and exit to Private Equity within 3 to 5 years.
@@ -70,7 +70,7 @@ export default function FoundersPage() {
       </section>
 
       {/* STATS BAR */}
-      <section className="py-16 px-4 border-y border-white/[0.03] bg-slate-950/80 backdrop-blur-sm">
+      <section className="py-16 px-4 border-y border-slate-200 bg-white/80 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
             { num: "5–20+", label: "Businesses per Group" },
@@ -86,10 +86,10 @@ export default function FoundersPage() {
               transition={{ delay: i * 0.12, duration: 0.5 }}
               className="text-center"
             >
-              <div className="text-2xl md:text-4xl font-black bg-gradient-to-r from-amber-300 to-yellow-400 bg-clip-text text-transparent">
+              <div className="text-2xl md:text-4xl font-black bg-gradient-to-r from-amber-500 to-yellow-500 bg-clip-text text-transparent">
                 {s.num}
               </div>
-              <div className="text-white/30 text-sm mt-1">{s.label}</div>
+              <div className="text-slate-400 text-sm mt-1">{s.label}</div>
             </motion.div>
           ))}
         </div>
@@ -99,9 +99,9 @@ export default function FoundersPage() {
       <section className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-4xl mx-auto">
           <RevealBlock>
-            <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-20 tracking-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 text-center mb-20 tracking-tight whitespace-nowrap">
               The Equity Partner{" "}
-              <span className="text-amber-400">Journey</span>
+              <span className="text-amber-500">Journey</span>
             </h2>
           </RevealBlock>
 
@@ -134,11 +134,11 @@ export default function FoundersPage() {
             <RevealBlock key={item.step} delay={i * 0.15} direction={item.dir}>
               <div className="flex flex-col md:flex-row gap-6 items-start mb-12 group">
                 <div className="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center flex-shrink-0 group-hover:border-amber-500/40 group-hover:bg-amber-500/[0.15] transition-all duration-300">
-                  <span className="text-2xl font-black text-amber-400">{item.step}</span>
+                  <span className="text-2xl font-black text-amber-500">{item.step}</span>
                 </div>
-                <div className="p-6 rounded-2xl bg-white/[0.01] border border-white/[0.03] flex-1 group-hover:border-amber-500/10 transition-all duration-300">
-                  <h3 className="text-white font-bold text-xl mb-2">{item.title}</h3>
-                  <p className="text-white/40 leading-relaxed">{item.desc}</p>
+                <div className="p-6 rounded-2xl bg-slate-100 border border-slate-200 flex-1 group-hover:border-amber-500/20 transition-all duration-300">
+                  <h3 className="text-slate-900 font-bold text-xl mb-2">{item.title}</h3>
+                  <p className="text-slate-500 leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             </RevealBlock>
@@ -152,9 +152,9 @@ export default function FoundersPage() {
       <section className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-5xl mx-auto">
           <RevealBlock>
-            <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16 tracking-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 text-center mb-16 tracking-tight whitespace-nowrap">
               Why Equity Partners{" "}
-              <span className="text-amber-400">Choose Us</span>
+              <span className="text-amber-500">Choose Us</span>
             </h2>
           </RevealBlock>
 
@@ -182,10 +182,10 @@ export default function FoundersPage() {
               },
             ].map((b) => (
               <TiltCard key={b.title} tiltAmount={8} glareColor="rgba(245,158,11,0.06)">
-                <div className="p-8 rounded-2xl bg-white/[0.01] border border-white/[0.03] hover:border-amber-500/10 transition-all duration-300 h-full">
+                <div className="p-8 rounded-2xl bg-slate-100 border border-slate-200 hover:border-amber-500/20 transition-all duration-300 h-full">
                   <div className="text-3xl mb-4">{b.icon}</div>
-                  <h3 className="text-white font-bold text-lg mb-2">{b.title}</h3>
-                  <p className="text-white/35 leading-relaxed text-sm">{b.desc}</p>
+                  <h3 className="text-slate-900 font-bold text-lg mb-2">{b.title}</h3>
+                  <p className="text-slate-500 leading-relaxed text-sm">{b.desc}</p>
                 </div>
               </TiltCard>
             ))}
@@ -199,9 +199,9 @@ export default function FoundersPage() {
       <section className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-4xl mx-auto">
           <RevealBlock>
-            <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16 tracking-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 text-center mb-16 tracking-tight whitespace-nowrap">
               The Struggles We{" "}
-              <span className="text-amber-400">Solve</span>
+              <span className="text-amber-500">Solve</span>
             </h2>
           </RevealBlock>
 
@@ -217,9 +217,9 @@ export default function FoundersPage() {
               "You lack the expertise and experience to acquire other businesses",
             ].map((struggle, i) => (
               <RevealBlock key={struggle} delay={i * 0.08}>
-                <div className="p-5 rounded-xl bg-white/[0.01] border border-white/[0.03] flex items-start gap-4 hover:border-amber-500/10 transition-all duration-300">
-                  <span className="text-amber-400 font-bold text-sm mt-0.5">{i + 1}</span>
-                  <p className="text-white/45 text-sm leading-relaxed">{struggle}</p>
+                <div className="p-5 rounded-xl bg-slate-100 border border-slate-200 flex items-start gap-4 hover:border-amber-500/20 transition-all duration-300">
+                  <span className="text-amber-500 font-bold text-sm mt-0.5">{i + 1}</span>
+                  <p className="text-slate-500 text-sm leading-relaxed">{struggle}</p>
                 </div>
               </RevealBlock>
             ))}
@@ -235,7 +235,7 @@ export default function FoundersPage() {
           <RevealBlock>
             <div className="p-10 rounded-3xl bg-gradient-to-br from-amber-500/[0.03] to-orange-500/[0.03] border border-amber-500/10 relative">
               <span className="absolute -top-4 left-8 text-8xl text-amber-500/10 select-none">&ldquo;</span>
-              <p className="text-xl md:text-2xl text-white/70 leading-relaxed italic relative z-10 mb-6">
+              <p className="text-xl md:text-2xl text-slate-600 leading-relaxed italic relative z-10 mb-6">
                 A fire safety business with £8m revenue and £1m EBITDA. The 50-year-old founder had no Finance Director, no Sales Director, and no Marketing Director. After 18 years, he was hungry to exit for over £20m. We set up a JV holding company, sourced 20+ similar businesses, implemented NetSuite and AI across the group, and built a roll-up on course for a £50m+ exit to Private Equity.
               </p>
               <div className="flex items-center gap-4">
@@ -243,8 +243,8 @@ export default function FoundersPage() {
                   DH
                 </div>
                 <div>
-                  <div className="text-white font-semibold text-sm">David Hargraves</div>
-                  <div className="text-white/30 text-xs">Chairman, Blue Sky Group</div>
+                  <div className="text-slate-900 font-semibold text-sm">David Hargraves</div>
+                  <div className="text-slate-400 text-xs">Chairman, Blue Sky Group</div>
                 </div>
               </div>
             </div>
@@ -254,11 +254,11 @@ export default function FoundersPage() {
 
       {/* CTA BANNER */}
       <section id="cta" className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-amber-950/10 to-slate-950" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-amber-50/30 to-slate-50" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent" />
         <div className="relative z-10 max-w-2xl mx-auto text-center">
-          <AssembleText text="Ready to Build Your Group?" className="text-4xl md:text-6xl font-black text-white mb-6 block" />
-          <p className="text-amber-100/40 mb-10 text-lg">Join the Equity Partners who are acquiring the 80% of businesses traditional buyers cannot touch.</p>
+          <AssembleText text="Ready to Build Your Group?" className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 mb-6 block whitespace-nowrap" />
+          <p className="text-amber-600/60 mb-10 text-lg">Join the Equity Partners who are acquiring the 80% of businesses traditional buyers cannot touch.</p>
           <MagneticButton strength={0.5}>
             <Link
               href="#"

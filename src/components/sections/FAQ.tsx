@@ -20,7 +20,7 @@ export default function FAQ() {
       >
         <div className="text-center mb-16">
           <Badge className="mb-4">{badge}</Badge>
-          <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight whitespace-nowrap">
             {headline}
           </h2>
         </div>

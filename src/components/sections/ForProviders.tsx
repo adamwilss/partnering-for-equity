@@ -53,10 +53,10 @@ export default function ForProviders() {
       >
         <div className="text-center mb-12">
           <Badge className="mb-4">{badge}</Badge>
-          <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight mb-6 whitespace-nowrap">
             {headline}
           </h2>
-          <p className="text-white/50 leading-relaxed text-base md:text-lg max-w-2xl mx-auto">
+          <p className="text-slate-900/50 leading-relaxed text-base md:text-lg max-w-2xl mx-auto">
             {subtitle}
           </p>
         </div>
@@ -65,13 +65,13 @@ export default function ForProviders() {
           {benefits.map((benefit) => (
             <div
               key={benefit.title}
-              className="group p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-purple-500/20 hover:bg-white/[0.04] transition-all duration-300"
+              className="group p-6 rounded-2xl bg-slate-100 border border-slate-200 hover:border-purple-500/20 hover:bg-slate-50 transition-all duration-300"
             >
               <div className="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-4 text-purple-400 group-hover:text-purple-300 group-hover:border-purple-500/30 transition-all duration-300">
                 <Icon name={benefit.icon} />
               </div>
-              <h3 className="text-white font-semibold mb-2">{benefit.title}</h3>
-              <p className="text-white/50 text-sm leading-relaxed">
+              <h3 className="text-slate-900 font-semibold mb-2">{benefit.title}</h3>
+              <p className="text-slate-900/50 text-sm leading-relaxed">
                 {benefit.description}
               </p>
             </div>
