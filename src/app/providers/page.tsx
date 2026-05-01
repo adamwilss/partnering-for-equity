@@ -2,22 +2,14 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
 import RevealBlock from "@/components/animations/RevealBlock";
 import StaggerCards from "@/components/animations/StaggerCards";
 import TiltCard from "@/components/animations/TiltCard";
 import MagneticButton from "@/components/animations/MagneticButton";
 import AssembleText from "@/components/animations/AssembleText";
-import FlipCard from "@/components/animations/FlipCard";
 import AnimatedDivider from "@/components/animations/AnimatedDivider";
 
 export default function ProvidersPage() {
-  const startupCards = [
-    { name: "EcoChain", desc: "Blockchain carbon credits", equity: "1.5%", potential: "$375,000", color: "emerald" },
-    { name: "MedSync AI", desc: "AI-powered medical records", equity: "0.75%", potential: "$187,500", color: "teal" },
-    { name: "LearnLoop", desc: "EdTech gamified learning", equity: "2.0%", potential: "$500,000", color: "green" },
-  ];
-
   return (
     <>
       {/* HERO — Teal/Emerald */}
@@ -56,11 +48,11 @@ export default function ProvidersPage() {
             animate={{ opacity: 1, y: 0 }}
             className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 mb-6 tracking-wide uppercase"
           >
-            Provider Mode
+            Succession Founder Path
           </motion.span>
 
           <AssembleText
-            text="Your Skills Are Worth More"
+            text="Exit Safely, Maximise Value"
             className="text-4xl sm:text-5xl lg:text-7xl font-black text-white tracking-tighter mb-6 block"
           />
 
@@ -70,7 +62,9 @@ export default function ProvidersPage() {
             transition={{ delay: 0.8, duration: 0.6 }}
             className="text-lg md:text-xl text-emerald-100/50 max-w-xl mx-auto mb-10 leading-relaxed"
           >
-            Stop trading time for money. Start earning equity in the startups you help build.
+            We partner with established business owners who want to retire within 1 to 5 years.
+            We derisk and systemise your business, prepare it for acquisition at a higher valuation,
+            and ensure your team is looked after.
           </motion.p>
 
           <motion.div
@@ -80,10 +74,10 @@ export default function ProvidersPage() {
           >
             <MagneticButton strength={0.5}>
               <Link
-                href="#"
+                href="#cta"
                 className="inline-flex items-center px-10 py-5 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 font-bold text-lg shadow-xl shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-shadow duration-300"
               >
-                Start Earning Equity
+                Explore Your Exit
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="ml-2">
                   <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
                 </svg>
@@ -93,7 +87,7 @@ export default function ProvidersPage() {
         </div>
       </section>
 
-      {/* EQUITY CALCULATOR TEASER */}
+      {/* EQUITY TIMELINE TEASER */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 overflow-hidden border-y border-white/[0.03]">
         <div className="max-w-4xl mx-auto">
           <RevealBlock>
@@ -104,39 +98,37 @@ export default function ProvidersPage() {
                   <div className="w-3 h-3 rounded-full bg-amber-400/60" />
                   <div className="w-3 h-3 rounded-full bg-emerald-400/60" />
                 </div>
-                <span className="text-white/20 text-xs ml-2">Equity Calculator</span>
+                <span className="text-white/20 text-xs ml-2">Equity Timeline</span>
               </div>
 
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">Estimate Your Equity Value</h3>
-              <p className="text-white/40 mb-8">Move the slider to see what your contribution could be worth at exit.</p>
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">Your Path to a Premium Exit</h3>
+              <p className="text-white/40 mb-8">We increase your business value while you retain income and purpose.</p>
 
-              {/* Fake slider */}
-              <div className="relative h-2 bg-white/[0.05] rounded-full mb-6">
-                <motion.div
-                  className="absolute top-0 left-0 h-full rounded-full bg-gradient-to-r from-emerald-500 to-teal-500"
-                  initial={{ width: "0%" }}
-                  whileInView={{ width: "65%" }}
-                  viewport={{ once: false }}
-                  transition={{ duration: 1.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                />
-                <motion.div
-                  className="absolute top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-white shadow-lg shadow-emerald-500/20 border-2 border-emerald-400"
-                  initial={{ left: "0%" }}
-                  whileInView={{ left: "65%" }}
-                  viewport={{ once: false }}
-                  transition={{ duration: 1.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                />
-              </div>
-
-              <div className="flex justify-between text-sm">
-                <span className="text-white/20">0% Equity</span>
-                <span className="text-emerald-400 font-bold text-lg">2.5% Equity</span>
-                <span className="text-white/20">5% Equity</span>
+              <div className="space-y-4">
+                {[
+                  { label: "Month 0", text: "Business review and valuation" },
+                  { label: "Month 1", text: "Call Option signed — pre-determined acquisition price" },
+                  { label: "Month 3", text: "20% equity transferred. Value already increased." },
+                  { label: "Month 6–12", text: "NetSuite, AI, and systems implemented" },
+                  { label: "Month 12–18", text: "Remaining equity acquired at higher valuation" },
+                ].map((item, i) => (
+                  <motion.div
+                    key={item.label}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: false }}
+                    transition={{ delay: i * 0.12, duration: 0.4 }}
+                    className="flex items-center gap-4"
+                  >
+                    <span className="text-emerald-400 font-bold text-sm w-20 flex-shrink-0">{item.label}</span>
+                    <span className="text-white/50 text-sm">{item.text}</span>
+                  </motion.div>
+                ))}
               </div>
 
               <div className="mt-8 p-4 rounded-xl bg-emerald-500/5 border border-emerald-500/10 text-center">
-                <span className="text-emerald-400 font-bold text-3xl">$625,000</span>
-                <p className="text-white/30 text-sm mt-1">Estimated value at $25M exit</p>
+                <span className="text-emerald-400 font-bold text-3xl">Higher Valuation</span>
+                <p className="text-white/30 text-sm mt-1">By the time we acquire the rest of your equity, the business value should have increased by more than the equity we took.</p>
               </div>
             </div>
           </RevealBlock>
@@ -145,21 +137,38 @@ export default function ProvidersPage() {
 
       <AnimatedDivider className="max-w-4xl mx-auto px-8" />
 
-      {/* BENEFIT CARDS — different shapes */}
+      {/* BENEFIT CARDS */}
       <section className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-5xl mx-auto">
           <RevealBlock>
             <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16 tracking-tight">
-              Why Providers <span className="text-emerald-400">Love This</span>
+              Why Succession Founders{" "}
+              <span className="text-emerald-400">Trust Us</span>
             </h2>
           </RevealBlock>
 
           <StaggerCards className="grid sm:grid-cols-2 gap-6">
             {[
-              { title: "Build Your Equity Portfolio", desc: "Diversify across multiple startups. One big exit changes the calculus of your career.", style: "shadow-[0_0_30px_rgba(20,184,166,0.08)]" },
-              { title: "Pick Projects You Believe In", desc: "Choose missions, industries, and founders that align with your values. No more soul-sucking gigs.", style: "bg-[repeating-linear-gradient(45deg,transparent,transparent_4px,rgba(20,184,166,0.02)_4px,rgba(20,184,166,0.02)_8px)]" },
-              { title: "Flexible Terms, Your Way", desc: "Define your contribution scope, equity expectations, and schedule upfront. Total autonomy.", style: "border-emerald-500/15" },
-              { title: "Elite Professional Community", desc: "Join the ranks of top-tier developers, designers, and marketers building the future together.", style: "bg-gradient-to-br from-emerald-500/[0.03] to-teal-500/[0.03]" },
+              {
+                title: "Derisk Your Business",
+                desc: "We stabilise and systemise your business, implementing ERP, AI, and proven processes so it can operate without you — dramatically increasing its sale value.",
+                style: "shadow-[0_0_30px_rgba(20,184,166,0.08)]",
+              },
+              {
+                title: "Retain Income & Purpose",
+                desc: "You keep an income to sustain you financially and we give you a meaningful role so you retain your purpose. You are not cast aside.",
+                style: "bg-[repeating-linear-gradient(45deg,transparent,transparent_4px,rgba(20,184,166,0.02)_4px,rgba(20,184,166,0.02)_8px)]",
+              },
+              {
+                title: "Higher Valuation on Exit",
+                desc: "By the time we acquire the rest of your equity, the business value should have increased by more than the equity we took. You exit at a premium.",
+                style: "border-emerald-500/15",
+              },
+              {
+                title: "Safe Pair of Hands",
+                desc: "We are the advisor and partner you never had. Your legacy is protected, your team is looked after, and your business continues to thrive.",
+                style: "bg-gradient-to-br from-emerald-500/[0.03] to-teal-500/[0.03]",
+              },
             ].map((b) => (
               <TiltCard key={b.title} tiltAmount={10} glareColor="rgba(20,184,166,0.06)">
                 <div className={`p-8 rounded-2xl bg-white/[0.01] border border-white/[0.03] hover:border-emerald-500/10 transition-all duration-300 h-full ${b.style}`}>
@@ -175,39 +184,33 @@ export default function ProvidersPage() {
 
       <AnimatedDivider className="max-w-4xl mx-auto px-8" />
 
-      {/* PORTFOLIO SIMULATOR — FlipCards */}
+      {/* STRUGGLES */}
       <section className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-4xl mx-auto">
           <RevealBlock>
-            <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-4 tracking-tight">
-              Simulate Your <span className="text-emerald-400">Portfolio</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16 tracking-tight">
+              The Struggles We{" "}
+              <span className="text-emerald-400">Understand</span>
             </h2>
-            <p className="text-white/35 text-center mb-16">Click cards to reveal your equity scenario</p>
           </RevealBlock>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {startupCards.map((card, i) => (
-              <RevealBlock key={card.name} delay={i * 0.15}>
-                <FlipCard
-                  front={
-                    <div className="p-8 rounded-2xl bg-white/[0.01] border border-white/[0.03] h-64 flex flex-col justify-between">
-                      <div>
-                        <div className="w-3 h-3 rounded-full bg-emerald-400/60 mb-4" />
-                        <h3 className="text-white font-bold text-xl">{card.name}</h3>
-                        <p className="text-white/35 text-sm mt-2">{card.desc}</p>
-                      </div>
-                      <span className="text-white/15 text-xs">Click to reveal</span>
-                    </div>
-                  }
-                  back={
-                    <div className="p-8 rounded-2xl bg-gradient-to-br from-emerald-500/[0.05] to-teal-500/[0.05] border border-emerald-500/15 h-64 flex flex-col justify-center items-center text-center">
-                      <div className="text-emerald-300 text-xs uppercase tracking-wider mb-2">Your Equity</div>
-                      <div className="text-4xl font-black text-white mb-1">{card.equity}</div>
-                      <div className="text-emerald-300/60 text-sm mb-4">Potential Value at $25M Exit</div>
-                      <div className="text-3xl font-black text-emerald-400">{card.potential}</div>
-                    </div>
-                  }
-                />
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              "Your mindset has shifted towards building a legacy, but you don't know how.",
+              "You are focused on securing your retirement, but you don't know how to achieve this.",
+              "Your business is not in a fit state to sell to a buyer.",
+              "Your business does not have the processes and systems to operate without you, making it challenging to sell and reducing its value.",
+              "You may be 'fed up' with your current role and yearn for the 'old days' when life was simpler.",
+              "You are increasingly concerned about the impact of AI and whether your business will survive.",
+              "You yearn to have more time with your grandchildren.",
+              "You or your spouse may be dealing with ill health.",
+              "You lack motivation because you don't have a young team of experienced business leaders by your side.",
+            ].map((struggle, i) => (
+              <RevealBlock key={struggle} delay={i * 0.06}>
+                <div className="p-5 rounded-xl bg-white/[0.01] border border-white/[0.03] flex items-start gap-4 hover:border-emerald-500/10 transition-all duration-300">
+                  <span className="text-emerald-400 font-bold text-sm mt-0.5">{i + 1}</span>
+                  <p className="text-white/45 text-sm leading-relaxed">{struggle}</p>
+                </div>
               </RevealBlock>
             ))}
           </div>
@@ -216,35 +219,33 @@ export default function ProvidersPage() {
 
       <AnimatedDivider className="max-w-4xl mx-auto px-8" />
 
-      {/* SUCCESS STORIES */}
+      {/* SERVICES */}
       <section className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-4xl mx-auto">
           <RevealBlock>
             <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16 tracking-tight">
-              Provider <span className="text-emerald-400">Success Stories</span>
+              What We Deliver{" "}
+              <span className="text-emerald-400">For You</span>
             </h2>
           </RevealBlock>
 
-          <StaggerCards className="space-y-6">
+          <StaggerCards className="space-y-4">
             {[
-              { name: "Sarah Chen", role: "Senior Full-Stack Developer", startup: "DataVault AI", equity: "1.5%", outcome: "$375K at $25M Series B", emoji: "💎" },
-              { name: "Marcus Rivera", role: "Product Designer", startup: "FlowState", equity: "2.0%", outcome: "$600K at $30M acquisition", emoji: "🎨" },
-              { name: "Priya Patel", role: "Growth Marketer", startup: "ShopStream", equity: "0.75%", outcome: "$150K ARR milestone bonus", emoji: "📈" },
-            ].map((story, i) => (
+              { emoji: "🛡️", text: "Derisk your business so it can be acquired" },
+              { emoji: "⚙️", text: "Stabilise and systemise your business with NetSuite, AI, and proven processes" },
+              { emoji: "📈", text: "Focus on derisking so we are less exposed on acquisition — prepare to sell within 12 months" },
+              { emoji: "💰", text: "Build wealth outside of your business" },
+              { emoji: "🤝", text: "Give you a meaningful role so you retain your purpose" },
+              { emoji: "🏛️", text: "Acquire your business into a valuable group or facilitate sale to another buyer" },
+            ].map((item, i) => (
               <div
-                key={story.name}
-                className="flex flex-col md:flex-row gap-6 p-6 rounded-2xl bg-white/[0.01] border border-white/[0.03] hover:border-emerald-500/10 transition-all duration-300 items-start"
+                key={item.text}
+                className="flex items-center gap-4 p-5 rounded-2xl bg-white/[0.01] border border-white/[0.03] hover:border-emerald-500/10 transition-all duration-300"
               >
-                <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-2xl flex-shrink-0">
-                  {story.emoji}
+                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-lg flex-shrink-0">
+                  {item.emoji}
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-white font-bold text-lg">{story.name}</h3>
-                  <p className="text-emerald-400/70 text-sm mb-1">{story.role} at {story.startup}</p>
-                  <p className="text-white/40 text-sm">
-                    <span className="text-emerald-400/60 font-semibold">{story.equity} equity</span> — {story.outcome}
-                  </p>
-                </div>
+                <p className="text-white/50 text-sm">{item.text}</p>
               </div>
             ))}
           </StaggerCards>
@@ -255,7 +256,7 @@ export default function ProvidersPage() {
       <section className="py-16 px-4 border-y border-white/[0.03] overflow-hidden">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-wrap justify-center gap-4">
-            {["Earn Equity", "Flexible Hours", "Choose Projects", "Build Portfolio", "Community Access", "Legal Protection"].map((perk, i) => (
+            {["De-risk", "Stabilise", "Systemise", "Retain Income", "Preserve Legacy", "Premium Exit"].map((perk, i) => (
               <motion.div
                 key={perk}
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -272,18 +273,18 @@ export default function ProvidersPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <section id="cta" className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-emerald-950/10 to-slate-950" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent" />
         <div className="relative z-10 max-w-2xl mx-auto text-center">
-          <AssembleText text="Ready to Earn Equity?" className="text-4xl md:text-6xl font-black text-white mb-6 block" />
-          <p className="text-emerald-100/40 mb-10 text-lg">Your expertise deserves more than an hourly rate.</p>
+          <AssembleText text="Ready to Explore Your Exit?" className="text-4xl md:text-6xl font-black text-white mb-6 block" />
+          <p className="text-emerald-100/40 mb-10 text-lg">You have built something valuable. Let us help you exit safely and maximise what it is worth.</p>
           <MagneticButton strength={0.5}>
             <Link
               href="#"
               className="inline-flex items-center px-10 py-5 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 font-bold text-lg shadow-xl shadow-emerald-500/20"
             >
-              Join as a Provider
+              Explore Your Exit
             </Link>
           </MagneticButton>
         </div>

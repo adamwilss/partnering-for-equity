@@ -17,23 +17,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Partnering for Equity — Trade Skills for Equity",
+  title: "Partnering for Equity — Acquire Established Businesses, Build a Group, Exit to PE",
   description:
-    "The AI-powered platform connecting startup founders with world-class service providers who work for equity instead of cash. Build the future, together.",
+    "Partner with David Hargraves and Blue Sky Group to acquire equity in established UK businesses (£1m–£20m revenue), build a valuable roll-up group, and exit to Private Equity within 3–5 years. No bank debt. No personal guarantees.",
   keywords: [
-    "equity",
-    "startups",
-    "founders",
-    "service providers",
-    "developers",
-    "designers",
-    "equity compensation",
-    "AI matching",
+    "partnering for equity",
+    "business acquisition",
+    "private equity exit",
+    "roll-up",
+    "buy and build",
+    "UK businesses",
+    "succession planning",
+    "MBO",
+    "David Hargraves",
+    "Blue Sky Group",
   ],
   openGraph: {
     title: "Partnering for Equity",
     description:
-      "Trade skills for equity. The AI-powered platform connecting founders and service providers.",
+      "Acquire established UK businesses, build a valuable group, and exit to Private Equity within 3–5 years.",
     type: "website",
   },
 };

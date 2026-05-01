@@ -3,167 +3,181 @@ export const siteContent = {
     logo: "Partnering for Equity",
     links: [
       { label: "How It Works", href: "/how-it-works" },
-      { label: "For Founders", href: "/founders" },
-      { label: "For Providers", href: "/providers" },
+      { label: "Equity Partners", href: "/founders" },
+      { label: "Succession Founders", href: "/providers" },
       { label: "About", href: "/about" },
     ],
-    cta: { label: "Get Started", href: "/founders" },
+    cta: { label: "Start Your Journey", href: "/founders" },
   },
 
   hero: {
-    badge: "AI-Powered Equity Matching",
+    badge: "UK Business Acquisition Strategy",
     headline: "Partnering for\nEquity",
     subtitle:
-      "The platform where startup founders and world-class service providers come together — trading skills for equity and building the future, together.",
+      "We partner with ambitious business owners and senior leaders to acquire a series of established UK businesses, systemise them, and exit to Private Equity within 3 to 5 years.",
     ctas: [
-      { label: "I'm a Founder", href: "#founders", variant: "primary" as const },
-      { label: "I'm a Service Provider", href: "#providers", variant: "secondary" as const },
+      { label: "I'm an Equity Partner", href: "/founders", variant: "primary" as const },
+      { label: "I'm a Succession Founder", href: "/providers", variant: "secondary" as const },
     ],
-    trustText: "Join 2,000+ founders and providers already partnering for equity",
+    trustText: "Join the quiet revolution behind the greatest transfer of wealth in history",
   },
 
   howItWorks: {
-    badge: "How It Works",
-    headline: "Three steps to your next big partnership",
+    badge: "The Process",
+    headline: "Five steps to building your group",
     steps: [
       {
         number: "01",
-        title: "Create Your Profile",
+        title: "Discovery & Strategic Review",
         description:
-          "Tell us about your startup vision or the skills you bring to the table. Our platform guides you through a quick, intuitive setup.",
+          "We begin with a deep diagnostic of your business to identify critical issues, hidden opportunities, and strategic fit. We assess what the business is worth now versus what it could be worth once derisked and systemised.",
         icon: "user",
       },
       {
         number: "02",
-        title: "Get AI-Matched",
+        title: "Stabilise & Systemise",
         description:
-          "Our intelligent matching engine analyzes skills, equity preferences, industry focus, and culture fit to find your ideal partner.",
+          "We implement the operational backbone that transforms the business from owner-dependent to investor-ready. ERP, AI, and proven marketing and sales processes are deployed to increase profit margins and enterprise value.",
         icon: "sparkles",
       },
       {
         number: "03",
-        title: "Start Building",
+        title: "Structure the Partnership",
         description:
-          "Connect, collaborate, and create something extraordinary. With aligned incentives, everyone is invested in the outcome.",
+          "We create the legal and financial framework. A jointly owned holding company is established, with performance-based vesting agreements and a clear path to full acquisition or exit.",
         icon: "rocket",
+      },
+      {
+        number: "04",
+        title: "Acquire & Build the Group",
+        description:
+          "We source and acquire 5 to 20 similar businesses to build a roll-up group. Each acquisition is stabilised, systemised, and integrated under the group umbrella, creating economies of scale.",
+        icon: "bank",
+      },
+      {
+        number: "05",
+        title: "Scale & Exit",
+        description:
+          "We grow the group to £3m to £5m+ EBITDA and sell to Private Equity or IPO within 3 to 5 years. After debt is cleared, you receive your share of the proceeds — often £10m to £20m+.",
+        icon: "target",
       },
     ],
   },
 
   aiMatching: {
-    badge: "Powered by Intelligence",
-    headline: "AI that finds your perfect match",
+    badge: "Powered by Experience",
+    headline: "A system forged through decades of UK acquisitions",
     description:
-      "Our matching engine goes beyond simple keyword searches. It analyzes complementary skill sets, equity expectations, industry experience, working styles, and shared values to create partnerships that thrive.",
+      "Our Partnering for Equity model is not a tech platform — it is a codified acquisition structure refined through countless successful (and unsuccessful) implementations over several decades of acquiring and scaling businesses in the UK.",
     features: [
-      "Smart skill-gap analysis",
-      "Equity preference alignment",
-      "Culture & values matching",
-      "Industry domain scoring",
+      "Transfer of Value expertise",
+      "Creative financing without PGs",
+      "ERP & AI system integration",
+      "PE-grade group architecture",
     ],
   },
 
   founders: {
-    badge: "For Founders",
-    headline: "Build your dream team without burning your runway",
+    badge: "For Equity Partners",
+    headline: "Build a £10m to £50m group and exit to Private Equity within 3 to 5 years",
     subtitle:
-      "Access elite talent that believes in your vision. Pay in equity, preserve your cash, and build with partners who are truly invested in your success.",
+      "We partner with business founders and C-suite executives who want to acquire a series of established businesses, roll them into a valuable group, and create generational wealth — without risking their own capital.",
     benefits: [
       {
-        title: "Preserve Your Capital",
+        title: "JV Holding Company",
         description:
-          "Keep cash in the bank for operations, marketing, and growth. Trade equity for top-tier talent instead.",
+          "We set up a jointly owned group holding company (typically 30% to you, 70% to us) that acquires equity in a series of similar companies. This adds no risk to your current business.",
         icon: "bank",
       },
       {
-        title: "Aligned Incentives",
+        title: "Acquire the Unsellable 80%",
         description:
-          "Service providers with equity are partners, not vendors. They care about your long-term success as much as you do.",
+          "Most traditional buyers walk away from 80% of businesses due to owner dependency, transfer-of-value issues, and financing gaps. Our strategy turns those 'unsellable' businesses into your opportunities.",
         icon: "target",
       },
       {
-        title: "Vetted Talent Pool",
+        title: "Stabilise, Systemise, Scale",
         description:
-          "Every provider on our platform is reviewed for skills, reliability, and professionalism. Only the best make the cut.",
+          "We install NetSuite, AI, and marketing and sales systems across every acquisition. Your existing business becomes the flagship of a fully systemised group that commands a far higher valuation.",
         icon: "shield",
       },
       {
-        title: "AI-Powered Matching",
+        title: "Exit to Private Equity",
         description:
-          "Stop sorting through endless proposals. Our AI surfaces the providers who are the best fit for your specific needs.",
+          "We arrange the exit of the group to Private Equity or IPO. Buy businesses for 1 to 3x EBITDA, sell the group for 9 to 12x EBITDA. That is the power of arbitrage.",
         icon: "zap",
       },
     ],
-    cta: { label: "Find Your Partners", href: "#cta" },
+    cta: { label: "Become an Equity Partner", href: "#cta" },
   },
 
   providers: {
-    badge: "For Service Providers",
-    headline: "Trade your skills for a piece of the next big thing",
+    badge: "For Succession Founders",
+    headline: "Exit safely, maximise value, and leave a legacy",
     subtitle:
-      "Stop trading time for money. Start building equity in promising startups while doing work you love. Your expertise is worth more than an hourly rate.",
+      "We partner with established business owners aged 60+ who want to retire within 1 to 5 years. We derisk and systemise your business, prepare it for acquisition at a higher valuation, and ensure your team is looked after.",
     benefits: [
       {
-        title: "Build Your Equity Portfolio",
+        title: "Derisk Your Business",
         description:
-          "Diversify your wealth by earning equity across multiple startups. One big exit could change everything.",
+          "We stabilise and systemise your business, implementing ERP, AI, and proven processes so it can operate without you — dramatically increasing its sale value and attractiveness to buyers.",
         icon: "chart",
       },
       {
-        title: "Choose Projects You Believe In",
+        title: "Retain Income & Purpose",
         description:
-          "Work on startups that excite you. Pick industries, missions, and founders that align with your values.",
+          "You keep an income to sustain you financially and we give you a meaningful role so you retain your purpose. You are not cast aside — you are transitioned with dignity.",
         icon: "heart",
       },
       {
-        title: "Flexible Collaboration",
+        title: "Higher Valuation on Exit",
         description:
-          "Set your own terms. Define your contribution, equity expectations, and schedule upfront with every partnership.",
+          "By the time we acquire the rest of your equity, the business value should have increased by more than the equity we took. You exit at a premium, not a discount.",
         icon: "settings",
       },
       {
-        title: "Professional Community",
+        title: "Safe Pair of Hands",
         description:
-          "Join a network of elite developers, designers, and marketers who are building the future — together.",
+          "We are the advisor and partner you never had. Your legacy is protected, your team is looked after, and your business continues to thrive under experienced leadership.",
         icon: "users",
       },
     ],
-    cta: { label: "Start Earning Equity", href: "#cta" },
+    cta: { label: "Explore Your Exit", href: "#cta" },
   },
 
   features: {
-    badge: "Why Choose Us",
-    headline: "Everything you need to partner with confidence",
+    badge: "What We Deliver",
+    headline: "Everything you need to build and exit a valuable group",
     cards: [
       {
-        title: "AI-Powered Matching",
+        title: "Group Holding Company Setup",
         description:
-          "Our proprietary algorithm analyzes dozens of data points to pair founders and providers for long-term success.",
+          "We establish the JV holding company, shareholder agreements, and equity structures that protect your assets and align every partner toward the same exit goal.",
       },
       {
-        title: "Smart Legal Framework",
+        title: "Transfer of Value Diagnostics",
         description:
-          "Built-in agreement templates, milestone tracking, and equity vesting schedules keep every partnership clear and fair.",
+          "We identify the hidden issues that make 80% of businesses 'unsellable' — owner dependency, key-person risk, poor financials — and we fix them before acquisition.",
       },
       {
-        title: "Equity Calculator",
+        title: "ERP & AI Implementation",
         description:
-          "Data-driven tools help both sides determine fair equity splits based on contribution scope, market rates, and startup stage.",
+          "NetSuite and complementary AI systems are rolled out across the group to create real-time visibility, operational efficiency, and the infrastructure PE buyers demand.",
       },
       {
-        title: "Secure Workspace",
+        title: "Creative Financing",
         description:
-          "Integrated collaboration tools including shared workspaces, messaging, file sharing, and milestone tracking.",
+          "We raise finance for acquisitions through bank MBO funding or our Secured Annuity Bond — without personal guarantees and without draining your capital.",
       },
       {
-        title: "Vetting & Verification",
+        title: "Marketing & Sales Systems",
         description:
-          "Every provider passes a rigorous review process. Every founder's startup is validated for legitimacy and potential.",
+          "Proven lead generation, pipeline management, and conversion processes are installed in every group company to drive organic growth and justify higher multiples.",
       },
       {
-        title: "Community & Network",
+        title: "Private Equity Exit Planning",
         description:
-          "Connect with like-minded builders, share insights, and grow together in our thriving community of innovators.",
+          "From day one, the group is architected to be attractive to PE. We build the reporting, governance, and growth story that commands 9 to 12x EBITDA on exit.",
       },
     ],
   },
@@ -172,11 +186,11 @@ export const siteContent = {
     badge: "Our Philosophy",
     headline: "Partners in Growth",
     quote:
-      "We believe the best businesses are built by teams with shared conviction, not just shared payroll. When everyone owns a piece of the outcome, extraordinary things happen.",
+      "We believe that by helping others first, we help ourselves. If this were our parents' business, what deal would we do with them? Partnering for Equity was designed with the ethical question first.",
     values: [
-      { label: "Shared Ownership", description: "Every partner has skin in the game" },
-      { label: "Radical Alignment", description: "Incentives that point in the same direction" },
-      { label: "Long-Term Vision", description: "Building for lasting value, not quick exits" },
+      { label: "Shared Ownership", description: "Every partner has skin in the game. No spectators." },
+      { label: "Radical Alignment", description: "Incentives that point everyone in the same direction." },
+      { label: "Long-Term Vision", description: "Building for lasting value and a high-value exit, not quick flips." },
     ],
   },
 
@@ -187,63 +201,62 @@ export const siteContent = {
       {
         question: "What is Partnering for Equity?",
         answer:
-          "Partnering for Equity is an AI-powered platform that connects startup founders with service providers — developers, designers, marketers, and more — who contribute their expertise in exchange for equity in the startup rather than traditional cash payment.",
+          "Partnering for Equity is a codified acquisition strategy where we partner with experienced business owners and senior leaders to acquire equity in established UK businesses (£1m to £20m revenue). We stabilise, systemise, and roll them into a valuable group that exits to Private Equity within 3 to 5 years — generating revenue from day one while securing ownership stakes.",
       },
       {
-        question: "How does the AI matching work?",
+        question: "Who is this for?",
         answer:
-          "Our matching engine analyzes your profile across multiple dimensions including skills, equity preferences, industry focus, working style, and values. It then surfaces the best matches using a proprietary scoring algorithm designed to predict successful, long-term partnerships.",
+          "Two primary avatars. Equity Partners are business founders (typically 35 to 55) or C-suite executives who want to build a buy-and-build roll-up and exit for £10m to £50m+. Succession Founders are older business owners (typically 60+) with £1m to £20m revenue who wish to exit within 1 to 5 years and want to maximise value while protecting their legacy.",
       },
       {
-        question: "What types of service providers are on the platform?",
+        question: "Do I need capital to participate?",
         answer:
-          "We have a diverse community of professionals including full-stack developers, UI/UX designers, growth marketers, content strategists, product managers, fractional CFOs, and more. Every provider is vetted before joining the platform.",
+          "No. Partnering for Equity is specifically designed so you do not need to use your own capital, take bank debt with personal guarantees, or raise investor funds. We use creative financing structures including JV holding companies and Secured Annuity Bonds to fund acquisitions.",
       },
       {
-        question: "How is equity determined?",
+        question: "How is equity structured?",
         answer:
-          "Equity splits are negotiated between the founder and provider using our built-in Equity Calculator. This tool factors in the scope of work, market rates for similar services, the startup's current stage and valuation, and the provider's expected time commitment to suggest fair equity ranges.",
+          "For Equity Partners, we typically set up a jointly owned holding company with a 30/70 equity split in our favour. This protects your existing business and creates a separate vehicle for acquisitions. For Succession Founders, we often take 20% equity after approximately 3 months of value creation, with the remainder acquired after 12 to 18 months via call options and shareholder agreements.",
       },
       {
-        question: "Is there a cost to join the platform?",
+        question: "What sectors do you focus on?",
         answer:
-          "Joining Partnering for Equity is free. We take a small percentage of the equity allocated in each successful partnership — typically 2-5%. This means our success is tied directly to yours: if you don't form a partnership, you don't pay anything.",
+          "We focus on sectors where our Equity Partners have deep sector-specific knowledge and reputations. Our model works across many industries — from fire safety and commercial maintenance to supported living, professional services, and HVAC. The key is partnering with operators who understand the 'rumour mill' and politics of their target sector.",
       },
       {
         question: "How do I get started?",
         answer:
-          "Simply click the 'Get Started' button, choose whether you're a Founder or Service Provider, and complete your profile. The entire setup takes less than 10 minutes, and you'll start seeing potential matches immediately.",
+          "Simply click 'Start Your Journey' and choose your path. If you are an Equity Partner, we will review your business and map out a roll-up strategy. If you are a Succession Founder, we will review your business to determine what it is worth now and what it could be worth once derisked and systemised.",
       },
     ],
   },
 
   ctaBanner: {
-    headline: "Ready to start building?",
+    headline: "Ready to build generational wealth?",
     subtitle:
-      "Join the platform where talent meets opportunity — and everyone owns the outcome.",
-    cta: { label: "Get Early Access", href: "#" },
+      "Join the determined and ambitious who are acquiring the 80% of businesses traditional buyers cannot touch.",
+    cta: { label: "Start Your Journey", href: "#" },
   },
 
   footer: {
     logo: "Partnering for Equity",
     description:
-      "The AI-powered platform connecting founders and service providers through equity-based partnerships.",
+      "A Blue Sky Group strategy for acquiring established UK businesses, building valuable roll-up groups, and exiting to Private Equity. Founded by David Hargraves.",
     columns: [
       {
-        title: "Platform",
+        title: "Strategy",
         links: [
-          { label: "How It Works", href: "#how-it-works" },
-          { label: "For Founders", href: "#founders" },
-          { label: "For Providers", href: "#providers" },
-          { label: "Features", href: "#features" },
+          { label: "How It Works", href: "/how-it-works" },
+          { label: "Equity Partners", href: "/founders" },
+          { label: "Succession Founders", href: "/providers" },
+          { label: "About", href: "/about" },
         ],
       },
       {
         title: "Company",
         links: [
-          { label: "About Us", href: "#" },
-          { label: "Blog", href: "#" },
-          { label: "Careers", href: "#" },
+          { label: "About David Hargraves", href: "/about" },
+          { label: "The Team", href: "/about" },
           { label: "Contact", href: "#" },
         ],
       },
@@ -256,11 +269,10 @@ export const siteContent = {
         ],
       },
     ],
-    copyright: `© ${new Date().getFullYear()} Partnering for Equity. All rights reserved.`,
+    copyright: `© ${new Date().getFullYear()} Partnering for Equity. A Blue Sky Group Strategy. All rights reserved.`,
     social: [
-      { label: "Twitter", href: "#" },
       { label: "LinkedIn", href: "#" },
-      { label: "Discord", href: "#" },
+      { label: "YouTube", href: "#" },
     ],
   },
 } as const;

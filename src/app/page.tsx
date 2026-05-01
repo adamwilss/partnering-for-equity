@@ -138,7 +138,7 @@ function PortalHero() {
           className="mb-4"
         >
           <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-500/10 border border-indigo-500/20 text-indigo-300">
-            AI-Powered Equity Matching
+            UK Business Acquisition Strategy
           </span>
         </motion.div>
 
@@ -163,8 +163,8 @@ function PortalHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          The platform where startup founders and world-class service providers come together —
-          trading skills for equity and building the future, together.
+          We partner with ambitious business owners and senior leaders to acquire a series of established UK businesses,
+          systemise them, and exit to Private Equity within 3 to 5 years.
         </motion.p>
 
         <motion.div
@@ -178,13 +178,13 @@ function PortalHero() {
             className="group relative inline-flex items-center px-8 py-4 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium text-sm md:text-base shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:from-indigo-500 hover:to-purple-500 transition-all duration-500 overflow-hidden"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-            <span className="relative z-10">I&apos;m a Founder</span>
+            <span className="relative z-10">I&apos;m an Equity Partner</span>
           </Link>
           <Link
             href="/providers"
             className="inline-flex items-center px-8 py-4 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-white font-medium text-sm md:text-base hover:bg-white/10 hover:border-white/20 transition-all duration-300 shadow-lg shadow-black/10"
           >
-            I&apos;m a Service Provider
+            I&apos;m a Succession Founder
           </Link>
         </motion.div>
 
@@ -194,7 +194,7 @@ function PortalHero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.5 }}
         >
-          Join 2,000+ founders and providers already partnering for equity
+          From the team that returned £70 billion to consumers. 30+ years of UK acquisition and exit experience.
         </motion.p>
       </div>
 
@@ -229,10 +229,10 @@ function TrustBar() {
     <section className="py-16 px-4 border-b border-white/[0.03] bg-slate-950/80 backdrop-blur-sm">
       <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
         {[
-          { num: "2,000+", label: "Active Partners" },
-          { num: "500+", label: "Startups" },
-          { num: "$50M+", label: "Equity Traded" },
-          { num: "95%", label: "Match Satisfaction" },
+          { num: "200,000+", label: "UK Businesses Aged 60+" },
+          { num: "80,000", label: "Unsellable Traditionally" },
+          { num: "£10m–£50m", label: "Typical Group Exit" },
+          { num: "30+", label: "Years Acquisition Experience" },
         ].map((stat, i) => (
           <motion.div
             key={stat.label}
@@ -256,18 +256,18 @@ function TrustBar() {
 function WhyEquitySection() {
   const reasons = [
     {
-      title: "Cash is expensive. Equity is belief.",
-      desc: "Trading equity means both sides are betting on the same future. No cash changes hands — just shared conviction in what you're building together.",
+      title: "Established businesses, not risky startups.",
+      desc: "You are acquiring businesses with 20+ years of hard work behind them — proven revenue, real customers, and existing cash flow. This is the fastest, safest, and lowest-risk strategy for building wealth.",
       accent: "border-l-teal-400",
     },
     {
-      title: "The best work happens when incentives align.",
-      desc: "When your developer or designer owns equity, they're not a vendor — they're a partner. Every late night, every creative solution, they share in the upside.",
+      title: "The 80% traditional buyers cannot touch.",
+      desc: "Owner dependency, transfer-of-value issues, and financing gaps make most businesses 'unsellable.' Our Partnering for Equity strategy turns those exact problems into your opportunities.",
       accent: "border-l-amber-400",
     },
     {
-      title: "Equity portfolios beat hourly rates over the long arc.",
-      desc: "One successful exit can eclipse years of billable hours. Diversify across promising startups and build wealth that compounds.",
+      title: "Arbitrage: buy low, sell the group high.",
+      desc: "Acquire individual businesses for 1–3x EBITDA. Roll them into a systemised group and sell to Private Equity for 9–12x EBITDA. That is how generational wealth is created.",
       accent: "border-l-rose-400",
     },
   ];
@@ -280,7 +280,7 @@ function WhyEquitySection() {
           <div>
             <RevealBlock>
               <AssembleText
-                text="Why Equity Wins"
+                text="Why Partnering for Equity Wins"
                 className="text-4xl md:text-6xl font-bold text-white tracking-tight"
               />
             </RevealBlock>
@@ -304,16 +304,31 @@ function WhyEquitySection() {
 }
 
 function CashVsEquity() {
-  const cashItems = ["Hourly billing = limited upside", "Client-vendor relationship", "Incentives misaligned"];
-  const equityItems = ["Unlimited upside potential", "True partnership dynamic", "Everyone owns the outcome"];
+  const cashItems = [
+    "6+ months to close, often years",
+    "Banks reject 80% of deals",
+    "Personal guarantees required",
+    "Cash drain during search phase",
+    "90% of deals fail before closing",
+  ];
+  const equityItems = [
+    "Acquire 5+ businesses per year",
+    "No bank debt, no PGs needed",
+    "Revenue from day one via fees",
+    "Creative financing preserves capital",
+    "80% of 'unsellable' businesses become yours",
+  ];
 
   return (
     <section className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="max-w-5xl mx-auto">
         <RevealBlock>
           <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16 tracking-tight">
-            Cash <span className="text-white/20">vs</span>{" "}
-            <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Equity</span>
+            Traditional Acquisition{" "}
+            <span className="text-white/20">vs</span>{" "}
+            <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+              Partnering for Equity
+            </span>
           </h2>
         </RevealBlock>
 
@@ -321,8 +336,8 @@ function CashVsEquity() {
           {/* Cash side - dull */}
           <RevealBlock direction="left" delay={0.2}>
             <div className="p-8 rounded-3xl bg-white/[0.01] border border-white/[0.04] opacity-70 hover:opacity-100 transition-opacity duration-500">
-              <div className="text-4xl mb-4">💼</div>
-              <h3 className="text-white/60 font-semibold text-xl mb-6">Traditional Cash</h3>
+              <div className="text-4xl mb-4">🏦</div>
+              <h3 className="text-white/60 font-semibold text-xl mb-6">Traditional Acquisition</h3>
               <ul className="space-y-4">
                 {cashItems.map((item) => (
                   <li key={item} className="flex items-center gap-3 text-white/35">
@@ -339,7 +354,7 @@ function CashVsEquity() {
             <div className="p-8 rounded-3xl bg-gradient-to-br from-indigo-500/[0.05] to-purple-500/[0.05] border border-indigo-500/15 shadow-[0_0_30px_rgba(99,102,241,0.05)]">
               <div className="text-4xl mb-4">🚀</div>
               <h3 className="text-white font-semibold text-xl mb-6 bg-gradient-to-r from-indigo-300 to-purple-300 bg-clip-text text-transparent">
-                Equity Partnership
+                Partnering for Equity
               </h3>
               <ul className="space-y-4">
                 {equityItems.map((item) => (
@@ -363,9 +378,9 @@ function CashVsEquity() {
 
 function EarningPotential() {
   const scenarios = [
-    { equity: "0.5%", exit: "$10M", value: "$50,000", color: "from-indigo-500 to-blue-500" },
-    { equity: "1.0%", exit: "$25M", value: "$250,000", color: "from-purple-500 to-pink-500" },
-    { equity: "2.5%", exit: "$50M", value: "$1,250,000", color: "from-amber-500 to-orange-500" },
+    { equity: "1x EBITDA", exit: "3x EBITDA", value: "3x return", color: "from-indigo-500 to-blue-500", desc: "Single business acquired" },
+    { equity: "3x EBITDA", exit: "9x EBITDA", value: "3x arbitrage", color: "from-purple-500 to-pink-500", desc: "Group of 5 businesses" },
+    { equity: "5x EBITDA", exit: "12x EBITDA", value: "2.4x arbitrage", color: "from-amber-500 to-orange-500", desc: "Group of 10+ businesses" },
   ];
 
   return (
@@ -374,10 +389,10 @@ function EarningPotential() {
       <div className="max-w-5xl mx-auto relative">
         <RevealBlock>
           <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-4 tracking-tight">
-            What Could Your Equity Be Worth?
+            The Power of Arbitrage
           </h2>
           <p className="text-white/40 text-center mb-16 max-w-lg mx-auto">
-            Example scenarios based on real startup exit data
+            Buy businesses for 1–3x EBITDA. Sell the group for 9–12x EBITDA.
           </p>
         </RevealBlock>
 
@@ -389,7 +404,8 @@ function EarningPotential() {
                   <div className={`inline-block px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${s.color} bg-clip-text text-transparent mb-4`}>
                     Scenario {i + 1}
                   </div>
-                  <div className="text-sm text-white/40 mb-2">{s.equity} equity at {s.exit} exit</div>
+                  <div className="text-sm text-white/40 mb-2">{s.desc}</div>
+                  <div className="text-sm text-white/30 mb-2">Buy at {s.equity} → Sell at {s.exit}</div>
                   <div className={`text-4xl font-bold bg-gradient-to-r ${s.color} bg-clip-text text-transparent`}>
                     {s.value}
                   </div>

@@ -87,7 +87,8 @@ export default function HowItWorksPage() {
             transition={{ delay: 0.6, duration: 0.5 }}
             className="text-lg md:text-xl text-cyan-100/50 max-w-xl mx-auto mb-12 leading-relaxed"
           >
-            Three steps. AI-powered matches. Zero cash upfront. This is how partnerships are born.
+            Five steps. Decades of UK acquisition experience. Zero personal guarantees.
+            This is how groups are built and exits are achieved.
           </motion.p>
 
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}>
@@ -111,13 +112,18 @@ export default function HowItWorksPage() {
         {[
           {
             num: "01",
-            title: "Create Your Profile",
-            desc: "Tell us who you are. Founders describe their startup and what they need. Providers showcase their skills and equity expectations. The setup takes under 10 minutes — our guided flow makes it effortless.",
-            bullets: ["Describe your startup or skills", "Set equity preferences and availability", "Upload portfolio or pitch deck", "AI enriches your profile automatically"],
+            title: "Discovery & Strategic Review",
+            desc: "We begin with a deep diagnostic of the business to identify critical issues, hidden opportunities, and strategic fit. For Equity Partners, we assess whether their business can serve as the flagship for a roll-up group and define the ideal acquisition avatar together. For Succession Founders, we review what the business is worth now versus what it could be worth once derisked and systemised.",
+            bullets: [
+              "Comprehensive business review and valuation assessment",
+              "Identification of serious problems, operational gaps, and growth levers",
+              "Definition of the ideal win scenario and acquisition criteria",
+              "Transfer of Value diagnostics to spot deal-killers early",
+            ],
             visual: (
               <div className="p-6 rounded-2xl border border-cyan-500/20 bg-slate-900/50">
                 <div className="space-y-3">
-                  {["Company Name", "Industry → SaaS / AI / FinTech", "Skills Needed → Full-Stack Dev", "Equity Offer → 1-3%", "Timeline → 6 months"].map((field, i) => (
+                  {["Business Review", "Valuation Assessment", "Transfer of Value Audit", "Strategic Fit Analysis", "Win Scenario Mapping"].map((field, i) => (
                     <motion.div
                       key={field}
                       initial={{ opacity: 0, x: -20 }}
@@ -136,9 +142,14 @@ export default function HowItWorksPage() {
           },
           {
             num: "02",
-            title: "AI Matching Engine",
-            desc: "This is where the magic happens. Our proprietary algorithm analyzes dozens of data points — skills, equity preferences, industry expertise, working styles, values — and surfaces the 3-5 best matches for both sides.",
-            bullets: ["Skills compatibility scored on 9 dimensions", "Equity expectation alignment verified", "Culture fit and values matching", "Industry domain expertise weighted"],
+            title: "Stabilise & Systemise",
+            desc: "We implement the operational backbone that transforms the business from owner-dependent to investor-ready. This includes deploying ERP systems (NetSuite), AI tools, and proven marketing and sales processes. For Equity Partners, this makes their business a high-value flagship capable of anchoring a group. For Succession Founders, this derisks the business and prepares it for acquisition or sale within 12 months.",
+            bullets: [
+              "Implementation of ERP, AI, and marketing/sales systems",
+              "Reduction of owner dependency and operational headaches",
+              "Increased profit margins and enterprise value",
+              "PE-grade reporting and governance infrastructure",
+            ],
             visual: (
               <div className="relative p-6 rounded-2xl border border-blue-500/20 bg-slate-900/50 flex items-center justify-center h-64">
                 <motion.div
@@ -146,9 +157,8 @@ export default function HowItWorksPage() {
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ repeat: Infinity, duration: 4 }}
                 >
-                  Founder
+                  Owner-Dependent
                 </motion.div>
-                {/* Connecting arcs */}
                 {[0, 1, 2].map((j) => (
                   <motion.div
                     key={j}
@@ -169,19 +179,24 @@ export default function HowItWorksPage() {
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ repeat: Infinity, duration: 4, delay: 1 }}
                 >
-                  Provider
+                  Investor-Ready
                 </motion.div>
               </div>
             ),
           },
           {
             num: "03",
-            title: "Start Building, Together",
-            desc: "Once matched, you connect directly. Video chat, review work, negotiate terms. Our platform provides smart legal agreements, milestone tracking, and a shared workspace. Equity vests as milestones are hit.",
-            bullets: ["Video introduction and portfolio review", "Built-in equity agreement templates", "Milestone-based vesting schedules", "Integrated collaboration workspace"],
+            title: "Structure the Partnership",
+            desc: "We create the legal and financial framework for the Partnering for Equity deal. For Equity Partners, we establish a jointly owned holding company (typically 30/70) to acquire similar businesses and mentor the founder to become the Group CEO. For Succession Founders, we structure a deal where we are vested with increasing equity based on performance metrics, while the owner gradually reduces involvement, retains income, and keeps their purpose.",
+            bullets: [
+              "Holding company setup and equity structuring",
+              "Performance-based vesting agreements",
+              "Call Options and NED agreements",
+              "Clear path to eventual full acquisition or exit",
+            ],
             visual: (
               <div className="p-6 rounded-2xl border border-cyan-500/20 bg-slate-900/50 grid grid-cols-2 gap-3">
-                {["Milestone 1: MVP ✓", "10% Equity Vested", "Milestone 2: Beta", "20% Equity Pending"].map((item, i) => (
+                {["JV Holding Company", "30/70 Equity Split", "Call Option Signed", "NED Retainer", "Revenue Share", "Shareholder Agreement"].map((item, i) => (
                   <motion.div
                     key={item}
                     initial={{ opacity: 0, scale: 0.8 }}
@@ -193,6 +208,70 @@ export default function HowItWorksPage() {
                     {item}
                   </motion.div>
                 ))}
+              </div>
+            ),
+          },
+          {
+            num: "04",
+            title: "Acquire & Build the Group",
+            desc: "We source and acquire 5–20 similar businesses to build a roll-up group. For Equity Partners, we leverage their sector knowledge and reputation to find targets, then stabilise and integrate each acquisition under the group umbrella. For Succession Founders, their business is either acquired into a relevant group at a higher valuation or sold to another buyer once fully prepared.",
+            bullets: [
+              "Sourcing and qualifying target acquisitions",
+              "Stabilisation and systemisation of acquired businesses",
+              "Group integration and economies of scale",
+              "Creative financing via Secured Annuity Bond or bank MBO",
+            ],
+            visual: (
+              <div className="p-6 rounded-2xl border border-cyan-500/20 bg-slate-900/50">
+                <div className="flex items-center justify-between">
+                  {["Flagship", "Acquisition 1", "Acquisition 2", "Acquisition N"].map((label, i) => (
+                    <motion.div
+                      key={label}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: false }}
+                      transition={{ delay: i * 0.2 }}
+                      className={`w-20 h-20 rounded-xl flex items-center justify-center text-xs text-center ${
+                        i === 0 ? "bg-blue-500/10 border border-blue-500/20 text-blue-300" : "bg-cyan-500/10 border border-cyan-500/20 text-cyan-300"
+                      }`}
+                    >
+                      {label}
+                    </motion.div>
+                  ))}
+                </div>
+                <div className="mt-4 h-px bg-gradient-to-r from-blue-500/20 via-cyan-500/20 to-cyan-500/20" />
+                <div className="mt-3 text-center text-xs text-white/30">Roll-up Group</div>
+              </div>
+            ),
+          },
+          {
+            num: "05",
+            title: "Scale & Exit",
+            desc: "We focus on maximising group value and orchestrating the ultimate wealth event. For Equity Partners, this means raising finance for MBOs, building wealth outside the business (e.g. via SSAS), and selling the group to Private Equity or taking it to IPO. For Succession Founders, this means completing the sale or transition on their terms, preserving their legacy and achieving a valuation multiples higher than before.",
+            bullets: [
+              "Wealth-building strategies outside the business",
+              "PE-grade reporting and group optimisation",
+              "Exit to Private Equity, IPO, or strategic sale",
+              "Buy at 1–3x EBITDA, sell the group at 9–12x EBITDA",
+            ],
+            visual: (
+              <div className="p-6 rounded-2xl border border-cyan-500/20 bg-slate-900/50 text-center">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: false }}
+                  className="text-4xl font-black bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent"
+                >
+                  £10m–£50m+
+                </motion.div>
+                <div className="text-white/30 text-sm mt-2">Typical Group Exit Value</div>
+                <div className="mt-4 flex justify-center gap-2">
+                  {["Private Equity", "IPO", "Strategic Sale"].map((label) => (
+                    <span key={label} className="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs">
+                      {label}
+                    </span>
+                  ))}
+                </div>
               </div>
             ),
           },
@@ -235,35 +314,28 @@ export default function HowItWorksPage() {
 
       <AnimatedDivider className="max-w-4xl mx-auto px-8" />
 
-      {/* MATCHING FACTORS */}
+      {/* 6 STRATEGIES */}
       <section className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-5xl mx-auto">
           <RevealBlock>
             <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16 tracking-tight">
-              What We <span className="text-cyan-400">Analyze</span>
+              The{" "}<span className="text-cyan-400">6 Primary Strategies</span>
             </h2>
           </RevealBlock>
 
-          <StaggerCards staggerDelay={0.12} className="grid sm:grid-cols-2 gap-6">
+          <StaggerCards staggerDelay={0.12} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Skills Match", pct: 94, desc: "Technical and creative skills cross-referenced against startup needs." },
-              { title: "Equity Alignment", pct: 88, desc: "Both sides' equity expectations matched to prevent negotiation deadlock." },
-              { title: "Culture Fit", pct: 91, desc: "Working styles, communication preferences, and values alignment scored." },
-              { title: "Industry Focus", pct: 86, desc: "Domain expertise weighted so fintech founders match fintech-savvy providers." },
+              { title: "Solve Serious Problems", pct: "Strategy 1", desc: "Target critical pain points — declining sales, broken marketing, operational inefficiencies, owner dependency. By solving these problems, we create immediate measurable value and earn equity stakes." },
+              { title: "Convert Deal Flow", pct: "Strategy 2", desc: "Transform your current advisory or consulting relationships into Partnering for Equity deals. Stop selling hours — start owning outcomes." },
+              { title: "Help Owners Sell", pct: "Strategy 3", desc: "Assist business owners in selling their business and be paid millions when they sell. We prepare the business, find the buyer, and take a slice of the upside." },
+              { title: "Grow Through Acquisition", pct: "Strategy 4", desc: "Partner with growth-oriented owners who have hit a ceiling. We lead origination, structuring, negotiation, and integration in exchange for equity." },
+              { title: "Partnering for Equity Roll-Ups", pct: "Strategy 5", desc: "Our favourite. Create industry-specific roll-ups by partnering with a flagship business owner, then source and acquire 5–20 similar businesses under a jointly owned holding company." },
+              { title: "Support Retiring Owners", pct: "Strategy 6", desc: "For owners who want to retire, we derisk and systemise their business, then either acquire it into our group at a higher valuation or assist in selling it for maximum proceeds." },
             ].map((factor) => (
               <div key={factor.title} className="p-6 rounded-2xl bg-white/[0.01] border border-white/[0.03] hover:border-cyan-500/10 transition-all duration-300">
                 <div className="flex items-center justify-between mb-3">
                   <h3 className="text-white font-bold">{factor.title}</h3>
-                  <span className="text-cyan-400 font-bold text-sm">{factor.pct}%</span>
-                </div>
-                <div className="h-1.5 bg-white/[0.04] rounded-full mb-4 overflow-hidden">
-                  <motion.div
-                    className="h-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500"
-                    initial={{ width: "0%" }}
-                    whileInView={{ width: `${factor.pct}%` }}
-                    viewport={{ once: false }}
-                    transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                  />
+                  <span className="text-cyan-400 font-bold text-sm">{factor.pct}</span>
                 </div>
                 <p className="text-white/35 text-sm leading-relaxed">{factor.desc}</p>
               </div>
@@ -279,17 +351,18 @@ export default function HowItWorksPage() {
         <div className="max-w-4xl mx-auto">
           <RevealBlock>
             <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-20 tracking-tight">
-              From Signup to <span className="text-cyan-400">Partnership</span>
+              From First Contact to{" "}
+              <span className="text-cyan-400">Partnership</span>
             </h2>
           </RevealBlock>
 
           <div className="relative pl-8 border-l border-cyan-500/20 space-y-12">
             {[
-              { step: "Sign Up", time: "5 min", desc: "Create your account and choose your path — Founder or Provider." },
-              { step: "Build Profile", time: "10 min", desc: "Answer guided questions. Our AI enriches your profile automatically." },
-              { step: "AI Matching", time: "Instant", desc: "Our engine scans and scores potential partners. You review curated matches." },
-              { step: "Connect", time: "1-3 days", desc: "Video chat with matches. Review portfolios. Discuss terms and expectations." },
-              { step: "Sign & Start", time: "24hr", desc: "Use our legal templates. Sign the equity agreement. Start building together." },
+              { step: "Discovery Call", time: "30 min", desc: "We discuss your business, your goals, and whether Partnering for Equity is the right fit." },
+              { step: "Business Review", time: "1–2 weeks", desc: "We conduct a comprehensive review to identify issues, opportunities, and strategic fit." },
+              { step: "Partnership Structure", time: "2–4 weeks", desc: "We design the JV holding company, equity split, call options, and NED agreements." },
+              { step: "Implementation", time: "3–12 months", desc: "We install NetSuite, AI, marketing systems, and begin sourcing acquisitions." },
+              { step: "Group Build & Exit", time: "3–5 years", desc: "We acquire, assimilate, scale, and sell the group to Private Equity or IPO." },
             ].map((item, i) => (
               <RevealBlock key={item.step} delay={i * 0.1} direction="left">
                 <div className="relative">
@@ -309,8 +382,8 @@ export default function HowItWorksPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-cyan-950/10 to-slate-950" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent" />
         <div className="relative z-10 max-w-2xl mx-auto text-center">
-          <AssembleText text="Ready to Find Your Partner?" className="text-4xl md:text-6xl font-black text-white mb-6 block" />
-          <p className="text-cyan-100/40 mb-10 text-lg">The matching engine is waiting.</p>
+          <AssembleText text="Ready to Build Your Group?" className="text-4xl md:text-6xl font-black text-white mb-6 block" />
+          <p className="text-cyan-100/40 mb-10 text-lg">The roadmap is clear. The team is ready. Your journey starts with one conversation.</p>
           <MagneticButton strength={0.5}>
             <Link
               href="#"
