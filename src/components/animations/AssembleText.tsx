@@ -1,5 +1,5 @@
 "use client";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
 
 interface AssembleTextProps {
@@ -15,8 +15,17 @@ export default function AssembleText({
 }: AssembleTextProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, margin: "-100px" });
+  const prefersReducedMotion = useReducedMotion();
 
   const letters = text.split("");
+
+  if (prefersReducedMotion) {
+    return (
+      <span ref={ref} className={`inline-block ${className}`}>
+        {text}
+      </span>
+    );
+  }
 
   return (
     <span ref={ref} className={`inline-block ${className}`}>

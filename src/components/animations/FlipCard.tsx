@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { type ReactNode, useState } from "react";
 
 interface FlipCardProps {
@@ -10,6 +10,23 @@ interface FlipCardProps {
 
 export default function FlipCard({ front, back, className = "" }: FlipCardProps) {
   const [flipped, setFlipped] = useState(false);
+  const prefersReducedMotion = useReducedMotion();
+
+  if (prefersReducedMotion) {
+    return (
+      <div className={className}>
+        <div className="relative">
+          {flipped ? back : front}
+        </div>
+        <button
+          onClick={() => setFlipped(!flipped)}
+          className="mt-3 text-sm text-white/40 hover:text-white/60 transition-colors"
+        >
+          {flipped ? "Show front" : "Show back"}
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div

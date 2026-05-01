@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface Particle {
   x: number; y: number; vx: number; vy: number;
@@ -20,8 +20,18 @@ export default function ParticleField() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<Particle[]>([]);
   const animRef = useRef<number>(0);
+  const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
+    const mql = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReducedMotion(mql.matches);
+    const handler = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
+    mql.addEventListener("change", handler);
+    return () => mql.removeEventListener("change", handler);
+  }, []);
+
+  useEffect(() => {
+    if (reducedMotion) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
@@ -129,7 +139,9 @@ export default function ParticleField() {
       window.removeEventListener("resize", resize);
       cancelAnimationFrame(animRef.current);
     };
-  }, []);
+  }, [reducedMotion]);
+
+  if (reducedMotion) return null;
 
   return (
     <canvas
