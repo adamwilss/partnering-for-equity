@@ -7,7 +7,11 @@ export default function BodyClasses({ children }: { children: React.ReactNode })
   const { theme, readabilityMode, reducedMotion } = useSettings();
 
   useEffect(() => {
+    const html = document.documentElement;
     const body = document.body;
+    html.classList.toggle("dark", theme === "dark");
+    html.classList.toggle("readability", readabilityMode);
+    html.classList.toggle("reduced-motion", reducedMotion);
     body.classList.toggle("dark", theme === "dark");
     body.classList.toggle("readability", readabilityMode);
     body.classList.toggle("reduced-motion", reducedMotion);

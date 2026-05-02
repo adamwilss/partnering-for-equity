@@ -59,7 +59,7 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
     }
   }, [theme, hydrated]);
 
-  const reducedMotion = readabilityMode || reducedMotionPref;
+  const reducedMotion = reducedMotionPref;
 
   const toggleReadabilityMode = () => setReadabilityMode((prev) => !prev);
   const toggleTheme = () => setTheme((prev) => (prev === "light" ? "dark" : "light"));
