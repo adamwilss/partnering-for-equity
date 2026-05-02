@@ -65,7 +65,6 @@ function ReadabilityToggle() {
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { readabilityMode } = useSettings();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -83,7 +82,7 @@ export default function Navbar() {
         scrolled
           ? "bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 shadow-lg shadow-slate-200 dark:shadow-slate-950"
           : "bg-transparent"
-      } ${readabilityMode ? "text-lg" : ""}`}
+      }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 md:h-20">
         <Link
