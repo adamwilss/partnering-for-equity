@@ -152,7 +152,7 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="flex items-center gap-3 py-3 border-t border-slate-100 dark:border-slate-800">
-            <span className="text-xs text-slate-400">Accessibility</span>
+            <span className="text-xs text-slate-400 dark:text-slate-500">Accessibility</span>
             <ReadabilityToggle />
             <ThemeToggle />
           </div>

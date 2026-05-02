@@ -59,7 +59,7 @@ export default function ProcessSteps({ steps, className = "" }: ProcessStepsProp
           <span className="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-sm font-semibold text-indigo-400">
             {i + 1}
           </span>
-          <p className="text-slate-500 text-sm leading-relaxed pt-1">{step}</p>
+          <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed pt-1">{step}</p>
         </motion.li>
       ))}
     </motion.ol>

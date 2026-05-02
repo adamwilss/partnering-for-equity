@@ -16,10 +16,10 @@ function Section1_1() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_70%_at_100%_50%,rgba(99,102,241,0.06),rgba(255,255,255,0))]" />
       <div className="relative z-10">
         <RevealBlock>
-          <AssembleText text="The basic process" className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-4" />
+          <AssembleText text="The basic process" className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-100 tracking-tight mb-4" />
         </RevealBlock>
         <RevealBlock delay={0.1}>
-          <p className="text-slate-500 text-base md:text-lg mb-8 max-w-3xl">
+          <p className="text-slate-500 dark:text-slate-400 text-base md:text-lg mb-8 max-w-3xl">
             Our 17-step process takes you from book authorship to a life-changing exit to Private Equity.
           </p>
         </RevealBlock>
@@ -44,7 +44,7 @@ function Section1_2() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_70%_at_0%_50%,rgba(147,51,234,0.06),rgba(255,255,255,0))]" />
       <div className="relative z-10">
         <RevealBlock>
-          <AssembleText text="Why acquire companies and create a group?" className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-8" />
+          <AssembleText text="Why acquire companies and create a group?" className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-100 tracking-tight mb-8" />
         </RevealBlock>
         <div className="grid md:grid-cols-3 gap-6">
           {reasons.map((reason, i) => (

@@ -72,7 +72,11 @@ export default function ParticleField() {
         const angle = a + (i * Math.PI * 2) / 5 - Math.PI / 2;
         const px = cx + Math.cos(angle) * r;
         const py = cy + Math.sin(angle) * r;
-        i === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
+        if (i === 0) {
+          ctx.moveTo(px, py);
+        } else {
+          ctx.lineTo(px, py);
+        }
         // Inner point
         const innerAngle = angle + Math.PI / 5;
         const ipx = cx + Math.cos(innerAngle) * r * 0.4;
@@ -90,7 +94,11 @@ export default function ParticleField() {
         const angle = a + (i * Math.PI) / 2;
         const px = cx + Math.cos(angle) * r;
         const py = cy + Math.sin(angle) * r;
-        i === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
+        if (i === 0) {
+          ctx.moveTo(px, py);
+        } else {
+          ctx.lineTo(px, py);
+        }
       }
       ctx.closePath();
       ctx.fill();

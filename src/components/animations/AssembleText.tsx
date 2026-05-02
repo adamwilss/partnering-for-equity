@@ -1,6 +1,6 @@
 "use client";
 import { motion, useInView, useReducedMotion } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useMemo } from "react";
 
 interface AssembleTextProps {
   text: string;
@@ -18,6 +18,7 @@ export default function AssembleText({
   const prefersReducedMotion = useReducedMotion();
 
   const letters = text.split("");
+  const offsets = useMemo(() => letters.map(() => (Math.random() - 0.5) * 80), [letters]);
 
   if (prefersReducedMotion) {
     return (
@@ -36,7 +37,7 @@ export default function AssembleText({
           initial={{
             opacity: 0,
             y: 40,
-            x: (Math.random() - 0.5) * 80,
+            x: offsets[i],
             rotateX: 90,
             scale: 0.5,
           }}
