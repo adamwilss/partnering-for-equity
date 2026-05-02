@@ -128,11 +128,138 @@ function IntroSection() {
   );
 }
 
+function StatsSection() {
+  const stats = [
+    { value: "£50m+", label: "Exit Value Potential" },
+    { value: "3-5 Years", label: "Typical Timeline" },
+    { value: "0%", label: "Personal Capital Required" },
+    { value: "17 Steps", label: "Proven Process" },
+  ];
+
+  return (
+    <section className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <div className="absolute inset-0 bg-slate-50 dark:bg-slate-950" />
+      <div className="max-w-6xl mx-auto relative">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          {stats.map((stat, i) => (
+            <RevealBlock key={stat.label} delay={i * 0.1} className="text-center">
+              <div className="p-6 md:p-8 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                <div className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent mb-2">
+                  {stat.value}
+                </div>
+                <div className="text-sm md:text-base text-slate-500 dark:text-slate-400 font-medium">
+                  {stat.label}
+                </div>
+              </div>
+            </RevealBlock>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function JourneyTimelineSection() {
+  const steps = [
+    {
+      title: "Plan",
+      description: "Define your acquisition strategy and personal wealth goals.",
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+        </svg>
+      ),
+    },
+    {
+      title: "Prepare",
+      description: "Build your deal team and secure financing structures.",
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+    },
+    {
+      title: "Acquire",
+      description: "Source, negotiate, and close on the right business.",
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      ),
+    },
+    {
+      title: "Build",
+      description: "Optimise operations, grow revenue, and scale systems.",
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+        </svg>
+      ),
+    },
+    {
+      title: "Exit",
+      description: "Maximise valuation and execute a life-changing sale.",
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+        </svg>
+      ),
+    },
+  ];
+
+  return (
+    <section className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <div className="absolute inset-0 bg-slate-50 dark:bg-slate-950" />
+      <div className="max-w-6xl mx-auto relative">
+        <div className="text-center mb-12 md:mb-16">
+          <RevealBlock>
+            <AssembleText text="Your journey to a life-changing exit" className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 tracking-tight" />
+          </RevealBlock>
+        </div>
+
+        <div className="flex flex-col md:flex-row items-stretch gap-6 md:gap-0">
+          {steps.map((step, i) => (
+            <div key={step.title} className="flex flex-col md:flex-row items-stretch flex-1">
+              <RevealBlock delay={i * 0.1} className="flex-1">
+                <div className="h-full p-6 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-center">
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-500 dark:text-indigo-400 mb-4">
+                    {step.icon}
+                  </div>
+                  <h3 className="text-lg md:text-xl font-semibold text-slate-900 dark:text-slate-100 mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+              </RevealBlock>
+              {i < steps.length - 1 && (
+                <div className="hidden md:flex items-center justify-center w-8 flex-shrink-0">
+                  <motion.div
+                    className="w-px h-12 bg-gradient-to-b from-transparent via-indigo-400/40 to-transparent"
+                    initial={{ scaleY: 0, opacity: 0 }}
+                    whileInView={{ scaleY: 1, opacity: 1 }}
+                    viewport={{ once: false, margin: "-50px" }}
+                    transition={{ duration: 0.6, delay: 0.3 + i * 0.1, ease: [0.33, 1, 0.68, 1] }}
+                  />
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   return (
     <>
       <HeroStrapLines />
       <IntroSection />
+      <StatsSection />
+      <JourneyTimelineSection />
     </>
   );
 }

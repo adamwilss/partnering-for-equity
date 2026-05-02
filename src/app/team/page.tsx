@@ -81,6 +81,48 @@ export default function TeamPage() {
           </RevealBlock>
         </div>
       </section>
+
+      <section className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 relative">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_50%_50%,rgba(99,102,241,0.04),rgba(255,255,255,0))]" />
+        <div className="max-w-5xl mx-auto relative z-10">
+          <RevealBlock>
+            <AssembleText text="How we work together" className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-100 tracking-tight mb-12 text-center" />
+          </RevealBlock>
+          <div className="grid md:grid-cols-2 gap-8 items-start">
+            <RevealBlock delay={0.1}>
+              <p className="text-slate-500 dark:text-slate-400 text-base md:text-lg leading-relaxed">
+                Our team combines decades of experience across strategy, operations, finance and technology. Each partner brings a unique perspective, but we all share the same mission: helping you build a valuable group of companies and achieve a life-changing exit to Private Equity.
+              </p>
+            </RevealBlock>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <RevealBlock delay={0.2}>
+                <div className="p-5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 h-full">
+                  <h3 className="text-slate-900 dark:text-slate-100 font-semibold mb-2">Strategy First</h3>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Every decision is guided by a clear roadmap to PE exit</p>
+                </div>
+              </RevealBlock>
+              <RevealBlock delay={0.3}>
+                <div className="p-5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 h-full">
+                  <h3 className="text-slate-900 dark:text-slate-100 font-semibold mb-2">Hands-On Support</h3>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">We work alongside you, not just advise from afar</p>
+                </div>
+              </RevealBlock>
+              <RevealBlock delay={0.4}>
+                <div className="p-5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 h-full">
+                  <h3 className="text-slate-900 dark:text-slate-100 font-semibold mb-2">Proven Systems</h3>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">ERP, AI and operational frameworks that scale</p>
+                </div>
+              </RevealBlock>
+              <RevealBlock delay={0.5}>
+                <div className="p-5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 h-full">
+                  <h3 className="text-slate-900 dark:text-slate-100 font-semibold mb-2">Aligned Incentives</h3>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">We succeed when you succeed — our equity model ensures that</p>
+                </div>
+              </RevealBlock>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
