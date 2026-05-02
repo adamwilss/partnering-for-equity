@@ -1,6 +1,7 @@
 "use client";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { type ReactNode, useState, useRef, MouseEvent } from "react";
+import { useSettings } from "@/components/providers/SettingsProvider";
 
 interface TiltCardProps {
   children: ReactNode;
@@ -18,6 +19,7 @@ export default function TiltCard({
   const ref = useRef<HTMLDivElement>(null);
   const [glarePos, setGlarePos] = useState({ x: 50, y: 50 });
   const [isHovered, setIsHovered] = useState(false);
+  const { reducedMotion } = useSettings();
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -40,6 +42,10 @@ export default function TiltCard({
     mouseY.set(y);
     setGlarePos({ x: x * 100, y: y * 100 });
   };
+
+  if (reducedMotion) {
+    return <div className={className}>{children}</div>;
+  }
 
   return (
     <motion.div

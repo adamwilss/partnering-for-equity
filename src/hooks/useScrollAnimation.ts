@@ -1,12 +1,19 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useSettings } from "@/components/providers/SettingsProvider";
 
 export default function useScrollAnimation() {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const { reducedMotion } = useSettings();
 
   useEffect(() => {
+    if (reducedMotion) {
+      setIsVisible(true);
+      return;
+    }
+
     const element = ref.current;
     if (!element) return;
 
@@ -22,7 +29,7 @@ export default function useScrollAnimation() {
 
     observer.observe(element);
     return () => observer.disconnect();
-  }, []);
+  }, [reducedMotion]);
 
   return { ref, isVisible };
 }

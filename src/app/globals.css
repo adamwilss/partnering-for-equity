@@ -25,6 +25,7 @@
   scroll-behavior: smooth;
 }
 
+/* Light theme (default) */
 body {
   background: #f8fafc;
   color: #0f172a;
@@ -33,19 +34,44 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Dark theme */
+body.dark {
+  background: #0f172a;
+  color: #f1f5f9;
+}
+
+/* Readability mode: larger text, better spacing */
+body.readability {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+body.readability h1,
+body.readability h2,
+body.readability h3 {
+  line-height: 1.3;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
   background: #f8fafc;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(99, 102, 241, 0.25);
-  border-radius: 3px;
+  background: rgba(99, 102, 241, 0.35);
+  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(99, 102, 241, 0.4);
+  background: rgba(99, 102, 241, 0.55);
+}
+
+body.dark ::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+body.dark ::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.45);
 }
 
 ::selection {
@@ -53,10 +79,20 @@ body {
   color: #0f172a;
 }
 
+body.dark ::selection {
+  background: rgba(99, 102, 241, 0.3);
+  color: #f1f5f9;
+}
+
 .glass-card {
   background: rgba(255, 255, 255, 0.6);
   border: 1px solid rgba(226, 232, 240, 0.8);
   backdrop-filter: blur(12px);
+}
+
+body.dark .glass-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(51, 65, 85, 0.8);
 }
 
 .gradient-text {
@@ -66,6 +102,18 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: gradient-shift 4s ease infinite;
+}
+
+body.readability .gradient-text {
+  background: none;
+  -webkit-text-fill-color: #0f172a;
+  color: #0f172a;
+  animation: none;
+}
+
+body.dark.readability .gradient-text {
+  -webkit-text-fill-color: #f1f5f9;
+  color: #f1f5f9;
 }
 
 @keyframes gradient-shift {
@@ -95,4 +143,13 @@ body {
 .text-reveal-mask {
   mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+}
+
+/* Reduced-motion: stop all CSS animations */
+body.reduced-motion *,
+body.reduced-motion *::before,
+body.reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
 }

@@ -1,6 +1,7 @@
 "use client";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useSettings } from "@/components/providers/SettingsProvider";
 
 interface AnimatedDividerProps {
   className?: string;
@@ -15,6 +16,15 @@ export default function AnimatedDivider({
 }: AnimatedDividerProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, margin: "-50px" });
+  const { reducedMotion } = useSettings();
+
+  if (reducedMotion) {
+    return (
+      <div ref={ref} className={className}>
+        <div className="h-px bg-gradient-to-r from-transparent via-indigo-400/40 to-transparent" />
+      </div>
+    );
+  }
 
   return (
     <div ref={ref} className={`overflow-hidden ${className}`}>

@@ -1,13 +1,17 @@
 "use client";
 import { motion, useScroll, useSpring } from "framer-motion";
+import { useSettings } from "@/components/providers/SettingsProvider";
 
 export default function ScrollProgress() {
+  const { reducedMotion } = useSettings();
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001,
   });
+
+  if (reducedMotion) return null;
 
   return (
     <motion.div

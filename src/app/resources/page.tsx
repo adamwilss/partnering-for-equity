@@ -1,0 +1,46 @@
+"use client";
+
+import RevealBlock from "@/components/animations/RevealBlock";
+import AssembleText from "@/components/animations/AssembleText";
+import { siteContent } from "@/content/siteContent";
+
+export default function ResourcesPage() {
+  const { headline, body, link, linkLabel } = siteContent.resources;
+
+  return (
+    <>
+      <section className="relative py-24 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div className="absolute inset-0 bg-slate-50">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_70%_at_50%_30%,rgba(120,119,198,0.12),rgba(255,255,255,0))]" />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
+          <RevealBlock>
+            <AssembleText text={headline} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight mb-6" />
+          </RevealBlock>
+        </div>
+      </section>
+
+      <section className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 relative">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_50%_50%,rgba(99,102,241,0.04),rgba(255,255,255,0))]" />
+        <div className="max-w-3xl mx-auto relative z-10 text-center">
+          <RevealBlock delay={0.15}>
+            <div className="p-10 rounded-2xl bg-slate-100 border border-slate-200">
+              <p className="text-slate-500 text-base md:text-lg mb-6">{body}</p>
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-8 py-4 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium text-sm md:text-base shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:from-indigo-500 hover:to-purple-500 transition-all duration-300"
+              >
+                {linkLabel}
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="ml-2">
+                  <path d="M7 17L17 7M17 7H7M17 7V17" />
+                </svg>
+              </a>
+            </div>
+          </RevealBlock>
+        </div>
+      </section>
+    </>
+  );
+}

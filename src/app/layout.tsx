@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { SettingsProvider } from "@/components/providers/SettingsProvider";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ScrollProgress from "@/components/animations/ScrollProgress";
 import ParticleField from "@/components/animations/ParticleField";
+import BodyClasses from "@/components/layout/BodyClasses";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -50,13 +52,15 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-slate-50">
-        <ScrollProgress />
-        <ParticleField />
-        <Navbar />
-        <main className="flex-1 relative z-10">{children}</main>
-        <Footer />
-      </body>
+      <SettingsProvider>
+        <BodyClasses>
+          <ScrollProgress />
+          <ParticleField />
+          <Navbar />
+          <main className="flex-1 relative z-10">{children}</main>
+          <Footer />
+        </BodyClasses>
+      </SettingsProvider>
     </html>
   );
 }
