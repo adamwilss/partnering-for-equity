@@ -49,6 +49,7 @@ html.readability {
 
 body.readability {
   line-height: 1.7;
+  font-weight: 600;
 }
 
 body.readability h1,
@@ -56,6 +57,7 @@ body.readability h2,
 body.readability h3 {
   line-height: 1.3;
   letter-spacing: 0.01em;
+  font-weight: 700;
 }
 
 /* Custom scrollbar */
