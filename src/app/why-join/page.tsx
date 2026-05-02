@@ -1,59 +1,115 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import RevealBlock from "@/components/animations/RevealBlock";
 import AssembleText from "@/components/animations/AssembleText";
 import ProcessSteps from "@/components/ui/ProcessSteps";
 import NumberedList from "@/components/ui/NumberedList";
 import VideoPlaceholder from "@/components/ui/VideoPlaceholder";
+import {
+  AnimatedStat,
+  ParallaxBlob,
+  SectionProgress,
+  ScrollRevealText,
+  HorizontalScrollCards,
+} from "@/components/animations/ScrollEffects";
 import { siteContent } from "@/content/siteContent";
 
-/* ── floating blobs (decorative) ─────────────────────────────── */
-function Blob({ className = "" }: { className?: string }) {
+/* ════════════════════════════════════════════════════════════════ */
+/*  HERO
+/* ════════════════════════════════════════════════════════════════ */
+function HeroSection() {
   return (
-    <div
-      className={`absolute rounded-full blur-3xl pointer-events-none opacity-40 dark:opacity-20 ${className}`}
-      style={{ willChange: "transform" }}
-    />
-  );
-}
-
-/* ── timeline connector (vertical line between steps) ─────────── */
-function TimelineConnector() {
-  return (
-    <div className="hidden md:flex flex-col items-center mx-4">
-      <div className="w-px h-full bg-gradient-to-b from-indigo-500/30 via-purple-500/20 to-transparent" />
-    </div>
-  );
-}
-
-/* ── stat highlight number ─────────────────────────────────────── */
-function StatNumber({ value, label }: { value: string; label: string }) {
-  return (
-    <div className="text-center">
-      <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent mb-1">
-        {value}
+    <section className="relative min-h-[80vh] flex items-center justify-center py-24 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="absolute inset-0 bg-slate-50 dark:bg-slate-950">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_70%_at_50%_30%,rgba(120,119,198,0.12),rgba(255,255,255,0))]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[800px] md:h-[800px]">
+          <motion.div
+            className="absolute inset-0 rounded-full border border-indigo-500/10"
+            animate={{ rotate: 360 }}
+            transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
+          />
+          <motion.div
+            className="absolute inset-8 rounded-full border border-purple-500/15"
+            animate={{ rotate: -360 }}
+            transition={{ repeat: Infinity, duration: 22, ease: "linear" }}
+          />
+          <motion.div
+            className="absolute inset-20 rounded-full border border-indigo-400/20"
+            animate={{ rotate: 360 }}
+            transition={{ repeat: Infinity, duration: 16, ease: "linear" }}
+          />
+          <motion.div
+            className="absolute inset-32 rounded-full border border-purple-400/25"
+            animate={{ rotate: -360 }}
+            transition={{ repeat: Infinity, duration: 12, ease: "linear" }}
+          >
+            <motion.div
+              className="absolute w-4 h-4 bg-indigo-400/60 rotate-45 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2"
+              animate={{ opacity: [0.3, 1, 0.3] }}
+              transition={{ repeat: Infinity, duration: 3 }}
+            />
+          </motion.div>
+          <motion.div
+            className="absolute inset-44 rounded-full bg-indigo-500/5 blur-2xl"
+            animate={{ scale: [1, 1.15, 1], opacity: [0.5, 0.8, 0.5] }}
+            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+          />
+        </div>
       </div>
-      <div className="text-xs md:text-sm text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wider">
-        {label}
+
+      <div className="relative z-10 max-w-4xl mx-auto text-center">
+        <RevealBlock>
+          <motion.span
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 mb-6"
+          >
+            Why Join Us
+          </motion.span>
+        </RevealBlock>
+        <RevealBlock delay={0.05}>
+          <AssembleText
+            text="Why you Should Join us"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-slate-100 tracking-tight mb-6"
+          />
+        </RevealBlock>
+        <RevealBlock delay={0.15}>
+          <p className="text-slate-500 dark:text-slate-400 text-base md:text-lg max-w-2xl mx-auto mb-8">
+            Everything you need to know about building wealth through business
+            acquisitions with Partnering for Equity.
+          </p>
+        </RevealBlock>
+        <RevealBlock delay={0.3}>
+          <div className="flex items-center justify-center gap-8">
+            <AnimatedStat value={17} label="Steps" />
+            <div className="w-px h-12 bg-slate-200 dark:bg-slate-700" />
+            <AnimatedStat value={19} label="Benefits" />
+            <div className="w-px h-12 bg-slate-200 dark:bg-slate-700" />
+            <AnimatedStat value={11} label="Issues Fixed" />
+          </div>
+        </RevealBlock>
       </div>
-    </div>
+    </section>
   );
 }
 
-/* ── section 1.1 : the 17-step process ──────────────────────────── */
+/* ════════════════════════════════════════════════════════════════ */
+/*  SECTION 1.1  —  The 17-Step Process
+/* ════════════════════════════════════════════════════════════════ */
 function Section1_1() {
   const { steps } = siteContent.whyJoin.sections[0];
 
   return (
     <SectionWrapper id="1.1">
-      <Blob className="-top-20 -right-20 w-72 h-72 bg-indigo-400/20" />
-      <Blob className="-bottom-20 -left-20 w-96 h-96 bg-purple-400/10" />
+      <ParallaxBlob className="-top-20 -right-20 w-72 h-72 bg-indigo-400/20" speed={0.4} />
+      <ParallaxBlob className="-bottom-40 -left-20 w-96 h-96 bg-purple-400/10" speed={0.2} />
 
       <div className="relative z-10">
         <div className="grid lg:grid-cols-5 gap-12 items-start">
-          {/* sticky left column */}
+          {/* sticky left */}
           <div className="lg:col-span-2 lg:sticky lg:top-32">
             <RevealBlock>
               <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 mb-4">
@@ -67,22 +123,22 @@ function Section1_1() {
               />
             </RevealBlock>
             <RevealBlock delay={0.1}>
-              <p className="text-slate-500 dark:text-slate-400 text-base md:text-lg mb-8">
-                Our 17-step process takes you from book authorship to a
-                life-changing exit to Private Equity.
-              </p>
+              <ScrollRevealText
+                text="Our 17-step process takes you from book authorship to a life-changing exit to Private Equity."
+                className="text-slate-500 dark:text-slate-400 text-base md:text-lg mb-8 block"
+              />
             </RevealBlock>
             <RevealBlock delay={0.15}>
               <div className="grid grid-cols-2 gap-6 p-6 rounded-2xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-                <StatNumber value="17" label="Steps" />
-                <StatNumber value="3-5" label="Years" />
-                <StatNumber value="£50m+" label="Exit Value" />
-                <StatNumber value="0%" label="Your Capital" />
+                <AnimatedStat value={17} label="Steps" />
+                <AnimatedStat value={3} label="Years" suffix="-5" />
+                <AnimatedStat value={50} label="Exit Value" prefix="£" suffix="m+" />
+                <AnimatedStat value={0} label="Your Capital" suffix="%" />
               </div>
             </RevealBlock>
           </div>
 
-          {/* scrolling right column */}
+          {/* scrolling right */}
           <div className="lg:col-span-3">
             <RevealBlock delay={0.2}>
               <ProcessSteps steps={steps} />
@@ -99,13 +155,15 @@ function Section1_1() {
   );
 }
 
-/* ── section 1.2 : why acquire? ─────────────────────────────────── */
+/* ════════════════════════════════════════════════════════════════ */
+/*  SECTION 1.2  —  Why Acquire?
+/* ════════════════════════════════════════════════════════════════ */
 function Section1_2() {
   const { reasons } = siteContent.whyJoin.sections[1];
 
   return (
     <SectionWrapper id="1.2" dark>
-      <Blob className="-top-20 -left-20 w-80 h-80 bg-purple-400/15" />
+      <ParallaxBlob className="-top-20 -left-20 w-80 h-80 bg-purple-400/15" speed={0.3} />
 
       <div className="relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-12">
@@ -121,18 +179,19 @@ function Section1_2() {
             />
           </RevealBlock>
           <RevealBlock delay={0.1}>
-            <p className="text-slate-500 dark:text-slate-400 text-base md:text-lg">
-              Three powerful reasons the roll-up model outperforms organic
-              growth.
-            </p>
+            <ScrollRevealText
+              text="Three powerful reasons the roll-up model outperforms organic growth."
+              className="text-slate-500 dark:text-slate-400 text-base md:text-lg block"
+            />
           </RevealBlock>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        {/* horizontal scroll on mobile, grid on desktop */}
+        <div className="hidden md:grid md:grid-cols-3 gap-6">
           {reasons.map((reason, i) => (
             <RevealBlock key={i} delay={i * 0.15}>
               <motion.div
-                whileHover={{ y: -4 }}
+                whileHover={{ y: -6, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 className="p-8 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-indigo-500/30 dark:hover:border-indigo-500/40 hover:shadow-xl hover:shadow-indigo-500/5 dark:hover:shadow-indigo-500/10 transition-all duration-500 h-full group"
               >
@@ -152,6 +211,25 @@ function Section1_2() {
           ))}
         </div>
 
+        <div className="md:hidden">
+          <HorizontalScrollCards className="py-2">
+            {reasons.map((reason, i) => (
+              <div
+                key={i}
+                className="w-[85vw] max-w-sm p-8 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex-shrink-0"
+              >
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500/10 to-purple-500/10 border border-indigo-500/20 flex items-center justify-center mb-5">
+                  <span className="text-xl font-bold text-indigo-500 dark:text-indigo-400">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <h3 className="text-slate-900 dark:text-slate-100 font-semibold text-lg mb-3">{reason.heading}</h3>
+                <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">{reason.body}</p>
+              </div>
+            ))}
+          </HorizontalScrollCards>
+        </div>
+
         <RevealBlock delay={0.5}>
           <div className="mt-12">
             <VideoPlaceholder title="Why acquire companies" />
@@ -162,13 +240,15 @@ function Section1_2() {
   );
 }
 
-/* ── section 1.3 : partnering model ─────────────────────────────── */
+/* ════════════════════════════════════════════════════════════════ */
+/*  SECTION 1.3  —  Our Partnering Model
+/* ════════════════════════════════════════════════════════════════ */
 function Section1_3() {
   const { body } = siteContent.whyJoin.sections[2];
 
   return (
     <SectionWrapper id="1.3">
-      <Blob className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-400/10" />
+      <ParallaxBlob className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-400/10" speed={0.15} />
 
       <div className="relative z-10 max-w-4xl mx-auto">
         <div className="text-center mb-10">
@@ -186,12 +266,20 @@ function Section1_3() {
         </div>
 
         <RevealBlock delay={0.15}>
-          <div className="p-8 md:p-10 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-indigo-500/5 to-transparent" />
+          <motion.div
+            whileHover={{ scale: 1.01 }}
+            transition={{ type: "spring", stiffness: 200, damping: 25 }}
+            className="p-8 md:p-10 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 relative overflow-hidden"
+          >
+            <motion.div
+              className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-indigo-500/5 to-transparent"
+              animate={{ opacity: [0.3, 0.6, 0.3] }}
+              transition={{ repeat: Infinity, duration: 5 }}
+            />
             <p className="text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed whitespace-pre-line relative z-10">
               {body}
             </p>
-          </div>
+          </motion.div>
         </RevealBlock>
 
         <RevealBlock delay={0.3}>
@@ -204,18 +292,19 @@ function Section1_3() {
   );
 }
 
-/* ── section 1.4 : benefits ─────────────────────────────────────── */
+/* ════════════════════════════════════════════════════════════════ */
+/*  SECTION 1.4  —  Benefits (19 reasons)
+/* ════════════════════════════════════════════════════════════════ */
 function Section1_4() {
   const { benefits } = siteContent.whyJoin.sections[3];
 
   return (
     <SectionWrapper id="1.4" dark>
-      <Blob className="-top-20 -right-20 w-96 h-96 bg-purple-400/15" />
-      <Blob className="-bottom-20 -left-20 w-72 h-72 bg-indigo-400/10" />
+      <ParallaxBlob className="-top-20 -right-20 w-96 h-96 bg-purple-400/15" speed={0.35} />
+      <ParallaxBlob className="-bottom-20 -left-20 w-72 h-72 bg-indigo-400/10" speed={0.2} />
 
       <div className="relative z-10">
         <div className="grid lg:grid-cols-5 gap-12 items-start">
-          {/* sticky left */}
           <div className="lg:col-span-2 lg:sticky lg:top-32">
             <RevealBlock>
               <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 mb-4">
@@ -229,25 +318,23 @@ function Section1_4() {
               />
             </RevealBlock>
             <RevealBlock delay={0.1}>
-              <p className="text-slate-500 dark:text-slate-400 text-base md:text-lg mb-8">
-                19 powerful reasons why our Equity Partners succeed where
-                traditional buyers fail.
-              </p>
+              <ScrollRevealText
+                text="19 powerful reasons why our Equity Partners succeed where traditional buyers fail."
+                className="text-slate-500 dark:text-slate-400 text-base md:text-lg mb-8 block"
+              />
             </RevealBlock>
             <RevealBlock delay={0.15}>
               <div className="p-6 rounded-2xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-                <StatNumber value="19" label="Key Benefits" />
+                <AnimatedStat value={19} label="Key Benefits" />
                 <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-700">
                   <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-                    Each benefit is designed to de-risk your journey and maximise
-                    your exit value.
+                    Each benefit is designed to de-risk your journey and maximise your exit value.
                   </p>
                 </div>
               </div>
             </RevealBlock>
           </div>
 
-          {/* scrolling right */}
           <div className="lg:col-span-3">
             <RevealBlock delay={0.2}>
               <NumberedList
@@ -267,13 +354,15 @@ function Section1_4() {
   );
 }
 
-/* ── section 1.5 : our role ─────────────────────────────────────── */
+/* ════════════════════════════════════════════════════════════════ */
+/*  SECTION 1.5  —  Our Role
+/* ════════════════════════════════════════════════════════════════ */
 function Section1_5() {
   const { items } = siteContent.whyJoin.sections[4];
 
   return (
     <SectionWrapper id="1.5">
-      <Blob className="-top-20 -left-20 w-80 h-80 bg-indigo-400/10" />
+      <ParallaxBlob className="-top-20 -left-20 w-80 h-80 bg-indigo-400/10" speed={0.25} />
 
       <div className="relative z-10">
         <div className="grid lg:grid-cols-5 gap-12 items-start">
@@ -290,13 +379,14 @@ function Section1_5() {
               />
             </RevealBlock>
             <RevealBlock delay={0.1}>
-              <p className="text-slate-500 dark:text-slate-400 text-base md:text-lg mb-8">
-                Everything we do to support you from plan to exit.
-              </p>
+              <ScrollRevealText
+                text="Everything we do to support you from plan to exit."
+                className="text-slate-500 dark:text-slate-400 text-base md:text-lg mb-8 block"
+              />
             </RevealBlock>
             <RevealBlock delay={0.15}>
               <div className="p-6 rounded-2xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-                <StatNumber value="14" label="Areas of Support" />
+                <AnimatedStat value={14} label="Areas of Support" />
               </div>
             </RevealBlock>
           </div>
@@ -319,13 +409,15 @@ function Section1_5() {
   );
 }
 
-/* ── section 1.6 : why should we help you? ──────────────────────── */
+/* ════════════════════════════════════════════════════════════════ */
+/*  SECTION 1.6  —  Why should we help you?
+/* ════════════════════════════════════════════════════════════════ */
 function Section1_6() {
   const { body } = siteContent.whyJoin.sections[5];
 
   return (
     <SectionWrapper id="1.6" dark>
-      <Blob className="-top-20 -right-20 w-72 h-72 bg-purple-400/15" />
+      <ParallaxBlob className="-top-20 -right-20 w-72 h-72 bg-purple-400/15" speed={0.3} />
 
       <div className="relative z-10 max-w-4xl mx-auto">
         <div className="text-center mb-10">
@@ -343,12 +435,20 @@ function Section1_6() {
         </div>
 
         <RevealBlock delay={0.15}>
-          <div className="p-8 md:p-10 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-purple-500/5 to-transparent" />
+          <motion.div
+            whileHover={{ scale: 1.01 }}
+            transition={{ type: "spring", stiffness: 200, damping: 25 }}
+            className="p-8 md:p-10 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 relative overflow-hidden"
+          >
+            <motion.div
+              className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-purple-500/5 to-transparent"
+              animate={{ opacity: [0.3, 0.6, 0.3] }}
+              transition={{ repeat: Infinity, duration: 5, delay: 1 }}
+            />
             <p className="text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed whitespace-pre-line relative z-10">
               {body}
             </p>
-          </div>
+          </motion.div>
         </RevealBlock>
 
         <RevealBlock delay={0.3}>
@@ -361,13 +461,15 @@ function Section1_6() {
   );
 }
 
-/* ── section 1.7 : issues we solve ──────────────────────────────── */
+/* ════════════════════════════════════════════════════════════════ */
+/*  SECTION 1.7  —  Issues We Solve
+/* ════════════════════════════════════════════════════════════════ */
 function Section1_7() {
   const { issues, closing } = siteContent.whyJoin.sections[6];
 
   return (
     <SectionWrapper id="1.7">
-      <Blob className="-bottom-20 -right-20 w-96 h-96 bg-indigo-400/10" />
+      <ParallaxBlob className="-bottom-20 -right-20 w-96 h-96 bg-indigo-400/10" speed={0.2} />
 
       <div className="relative z-10">
         <div className="grid lg:grid-cols-5 gap-12 items-start">
@@ -384,13 +486,14 @@ function Section1_7() {
               />
             </RevealBlock>
             <RevealBlock delay={0.1}>
-              <p className="text-slate-500 dark:text-slate-400 text-base md:text-lg mb-8">
-                The 11 critical issues we fix to justify our 20%+ equity stake.
-              </p>
+              <ScrollRevealText
+                text="The 11 critical issues we fix to justify our 20%+ equity stake."
+                className="text-slate-500 dark:text-slate-400 text-base md:text-lg mb-8 block"
+              />
             </RevealBlock>
             <RevealBlock delay={0.15}>
               <div className="p-6 rounded-2xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-                <StatNumber value="11" label="Critical Issues" />
+                <AnimatedStat value={11} label="Critical Issues" />
               </div>
             </RevealBlock>
           </div>
@@ -418,13 +521,15 @@ function Section1_7() {
   );
 }
 
-/* ── section 1.8 : gaining equity stakes ──────────────────────── */
+/* ════════════════════════════════════════════════════════════════ */
+/*  SECTION 1.8  —  Gaining Equity Stakes
+/* ════════════════════════════════════════════════════════════════ */
 function Section1_8() {
   const { body } = siteContent.whyJoin.sections[7];
 
   return (
     <SectionWrapper id="1.8" dark>
-      <Blob className="-top-20 -left-20 w-80 h-80 bg-purple-400/15" />
+      <ParallaxBlob className="-top-20 -left-20 w-80 h-80 bg-purple-400/15" speed={0.25} />
 
       <div className="relative z-10 max-w-4xl mx-auto">
         <div className="text-center mb-10">
@@ -442,12 +547,20 @@ function Section1_8() {
         </div>
 
         <RevealBlock delay={0.15}>
-          <div className="p-8 md:p-10 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-indigo-500/5 to-transparent" />
+          <motion.div
+            whileHover={{ scale: 1.01 }}
+            transition={{ type: "spring", stiffness: 200, damping: 25 }}
+            className="p-8 md:p-10 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 relative overflow-hidden"
+          >
+            <motion.div
+              className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-indigo-500/5 to-transparent"
+              animate={{ opacity: [0.3, 0.6, 0.3] }}
+              transition={{ repeat: Infinity, duration: 5, delay: 2 }}
+            />
             <p className="text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed whitespace-pre-line relative z-10">
               {body}
             </p>
-          </div>
+          </motion.div>
         </RevealBlock>
 
         <RevealBlock delay={0.3}>
@@ -460,13 +573,15 @@ function Section1_8() {
   );
 }
 
-/* ── section 1.9 : become the author ───────────────────────────── */
+/* ════════════════════════════════════════════════════════════════ */
+/*  SECTION 1.9  —  Become the Author
+/* ════════════════════════════════════════════════════════════════ */
 function Section1_9() {
   const { body, link, linkLabel } = siteContent.whyJoin.sections[8];
 
   return (
     <SectionWrapper id="1.9">
-      <Blob className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-400/10" />
+      <ParallaxBlob className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-400/10" speed={0.15} />
 
       <div className="relative z-10 max-w-4xl mx-auto">
         <div className="text-center mb-10">
@@ -484,8 +599,16 @@ function Section1_9() {
         </div>
 
         <RevealBlock delay={0.15}>
-          <div className="p-8 md:p-10 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-purple-500/5 to-transparent" />
+          <motion.div
+            whileHover={{ scale: 1.01 }}
+            transition={{ type: "spring", stiffness: 200, damping: 25 }}
+            className="p-8 md:p-10 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 relative overflow-hidden"
+          >
+            <motion.div
+              className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-purple-500/5 to-transparent"
+              animate={{ opacity: [0.3, 0.6, 0.3] }}
+              transition={{ repeat: Infinity, duration: 5, delay: 3 }}
+            />
             <p className="text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed whitespace-pre-line relative z-10 mb-6">
               {body}
             </p>
@@ -496,19 +619,11 @@ function Section1_9() {
               className="inline-flex items-center text-indigo-600 dark:text-indigo-400 hover:text-indigo-400 font-medium text-sm transition-colors relative z-10"
             >
               {linkLabel}
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                className="ml-1"
-              >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="ml-1">
                 <path d="M7 17L17 7M17 7H7M17 7V17" />
               </svg>
             </a>
-          </div>
+          </motion.div>
         </RevealBlock>
 
         <RevealBlock delay={0.3}>
@@ -525,59 +640,8 @@ function Section1_9() {
 export default function WhyJoinPage() {
   return (
     <>
-      {/* hero */}
-      <section className="relative py-24 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-slate-50 dark:bg-slate-950">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_70%_at_50%_30%,rgba(120,119,198,0.12),rgba(255,255,255,0))]" />
-        </div>
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <RevealBlock>
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 mb-6">
-              Why Join Us
-            </span>
-          </RevealBlock>
-          <RevealBlock delay={0.05}>
-            <AssembleText
-              text="Why you Should Join us"
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-slate-100 tracking-tight mb-6"
-            />
-          </RevealBlock>
-          <RevealBlock delay={0.15}>
-            <p className="text-slate-500 dark:text-slate-400 text-base md:text-lg max-w-2xl mx-auto">
-              Everything you need to know about building wealth through business
-              acquisitions with Partnering for Equity.
-            </p>
-          </RevealBlock>
-        </div>
-      </section>
-
-      {/* quick overview */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative bg-slate-100 dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
-        <div className="max-w-5xl mx-auto relative z-10">
-          <div className="grid sm:grid-cols-3 gap-6">
-            {[
-              { num: "17", label: "Step Process", desc: "From book to exit" },
-              { num: "19", label: "Benefits", desc: "Why partners win" },
-              { num: "11", label: "Issues Solved", desc: "Problems we fix" },
-            ].map((card, i) => (
-              <RevealBlock key={i} delay={i * 0.1}>
-                <div className="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 h-full text-center shadow-sm hover:shadow-md transition-shadow">
-                  <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent mb-2">
-                    {card.num}
-                  </div>
-                  <h3 className="text-slate-900 dark:text-slate-100 font-semibold text-lg mb-1">
-                    {card.label}
-                  </h3>
-                  <p className="text-slate-500 dark:text-slate-400 text-sm">
-                    {card.desc}
-                  </p>
-                </div>
-              </RevealBlock>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      <SectionProgress />
+      <HeroSection />
       <Section1_1 />
       <Section1_2 />
       <Section1_3 />
