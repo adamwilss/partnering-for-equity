@@ -15,7 +15,7 @@ function ThemeToggle() {
       onClick={toggleTheme}
       aria-pressed={isDark}
       aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
-      className="relative w-10 h-10 rounded-full bg-slate-100 border border-slate-200 hover:border-indigo-500/30 flex items-center justify-center text-slate-500 hover:text-indigo-400 transition-all duration-200"
+      className={`relative w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-indigo-500/30 flex items-center justify-center text-slate-500 hover:text-indigo-400 transition-all duration-200`}
       title={isDark ? "Light theme" : "Dark theme"}
     >
       {isDark ? (
@@ -50,7 +50,7 @@ function ReadabilityToggle() {
       className={`relative w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-200 ${
         readabilityMode
           ? "bg-indigo-500/10 border-indigo-500/30 text-indigo-400"
-          : "bg-slate-100 border-slate-200 text-slate-500 hover:text-indigo-400 hover:border-indigo-500/30"
+          : "bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-500 hover:text-indigo-400 hover:border-indigo-500/30"
       }`}
       title={readabilityMode ? "Readability mode on" : "Readability mode off"}
     >
@@ -81,14 +81,14 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/80 backdrop-blur-xl border-b border-slate-200 shadow-lg shadow-slate-200"
+          ? "bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 shadow-lg shadow-slate-200 dark:shadow-slate-950"
           : "bg-transparent"
       } ${readabilityMode ? "text-lg" : ""}`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 md:h-20">
         <Link
           href="/"
-          className="text-slate-900 font-bold text-lg tracking-tight hover:text-indigo-300 transition-colors"
+          className="text-slate-900 dark:text-slate-100 font-bold text-lg tracking-tight hover:text-indigo-300 transition-colors"
         >
           {logo}
         </Link>
@@ -99,7 +99,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-slate-600 hover:text-slate-900 transition-colors duration-200"
+              className="text-sm text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100 transition-colors duration-200"
             >
               {link.label}
             </Link>
@@ -113,7 +113,7 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-slate-900 p-2"
+          className="md:hidden text-slate-900 dark:text-slate-100 p-2"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -140,18 +140,18 @@ export default function Navbar() {
           mobileOpen ? "max-h-[32rem] pb-4" : "max-h-0"
         }`}
       >
-        <div className="px-4 flex flex-col gap-3 bg-white/95 backdrop-blur-xl border-b border-slate-200">
+        <div className="px-4 flex flex-col gap-3 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="text-sm text-slate-600 hover:text-slate-900 py-2 transition-colors"
+              className="text-sm text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100 py-2 transition-colors"
             >
               {link.label}
             </Link>
           ))}
-          <div className="flex items-center gap-3 py-3 border-t border-slate-100">
+          <div className="flex items-center gap-3 py-3 border-t border-slate-100 dark:border-slate-800">
             <span className="text-xs text-slate-400">Accessibility</span>
             <ReadabilityToggle />
             <ThemeToggle />

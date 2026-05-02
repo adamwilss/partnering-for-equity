@@ -21,17 +21,17 @@ export default function Accordion({ items }: AccordionProps) {
       {items.map((item, i) => (
         <div
           key={i}
-          className="rounded-2xl border border-slate-200 bg-slate-100 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:border-slate-300"
+          className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:border-slate-300 dark:hover:border-slate-600"
         >
           <button
             onClick={() => toggle(i)}
             className="w-full text-left px-6 py-5 flex items-center justify-between gap-4"
           >
-            <span className="text-slate-900 font-medium text-base md:text-lg">
+            <span className="text-slate-900 dark:text-slate-100 font-medium text-base md:text-lg">
               {item.question}
             </span>
             <span
-              className={`flex-shrink-0 w-6 h-6 rounded-full border border-slate-300 flex items-center justify-center transition-transform duration-300 ${
+              className={`flex-shrink-0 w-6 h-6 rounded-full border border-slate-300 dark:border-slate-600 flex items-center justify-center transition-transform duration-300 ${
                 openIndex === i ? "rotate-45 bg-indigo-500/20 border-indigo-500/40" : ""
               }`}
             >
@@ -42,7 +42,7 @@ export default function Accordion({ items }: AccordionProps) {
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
-                className="text-slate-900"
+                className="text-slate-900 dark:text-slate-100"
               >
                 <line x1="6" y1="0" x2="6" y2="12" />
                 <line x1="0" y1="6" x2="12" y2="6" />
@@ -54,7 +54,7 @@ export default function Accordion({ items }: AccordionProps) {
               openIndex === i ? "pb-5 max-h-96" : "max-h-0"
             }`}
           >
-            <p className="text-slate-500 leading-relaxed">{item.answer}</p>
+            <p className="text-slate-500 dark:text-slate-400 leading-relaxed">{item.answer}</p>
           </div>
         </div>
       ))}

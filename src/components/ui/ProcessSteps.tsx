@@ -30,12 +30,12 @@ export default function ProcessSteps({ steps, className = "" }: ProcessStepsProp
         {steps.map((step, i) => (
           <li
             key={i}
-            className="flex gap-4 p-5 rounded-xl bg-slate-100 border border-slate-200"
+            className="flex gap-4 p-5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700"
           >
             <span className="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-sm font-semibold text-indigo-400">
               {i + 1}
             </span>
-            <p className="text-slate-500 text-sm leading-relaxed pt-1">{step}</p>
+            <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed pt-1">{step}</p>
           </li>
         ))}
       </ol>
@@ -54,7 +54,7 @@ export default function ProcessSteps({ steps, className = "" }: ProcessStepsProp
         <motion.li
           key={i}
           variants={itemVariants}
-          className="flex gap-4 p-5 rounded-xl bg-slate-100 border border-slate-200 hover:border-indigo-500/20 hover:bg-slate-50 transition-all duration-300"
+          className="flex gap-4 p-5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-indigo-500/20 dark:hover:border-indigo-500/30 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-all duration-300"
         >
           <span className="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-sm font-semibold text-indigo-400">
             {i + 1}

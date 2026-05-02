@@ -40,7 +40,7 @@ export default function NumberedList({ items, className = "", showNumbers = true
     return (
       <div
         key={i}
-        className="flex gap-4 p-5 rounded-xl bg-slate-100 border border-slate-200 hover:border-indigo-500/20 hover:bg-slate-50 transition-all duration-300"
+        className="flex gap-4 p-5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-indigo-500/20 dark:hover:border-indigo-500/30 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-all duration-300"
       >
         {showNumbers && (
           <span className="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-sm font-semibold text-indigo-400">
@@ -49,9 +49,9 @@ export default function NumberedList({ items, className = "", showNumbers = true
         )}
         <div className="flex-1 min-w-0">
           {heading && (
-            <h4 className="text-slate-900 font-semibold text-sm mb-1">{heading}</h4>
+            <h4 className="text-slate-900 dark:text-slate-100 font-semibold text-sm mb-1">{heading}</h4>
           )}
-          <p className="text-slate-500 text-sm leading-relaxed">{body}</p>
+          <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">{body}</p>
         </div>
       </div>
     );

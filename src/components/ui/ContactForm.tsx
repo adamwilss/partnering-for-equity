@@ -15,14 +15,14 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="p-8 rounded-2xl bg-slate-100 border border-slate-200 text-center">
+      <div className="p-8 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-center">
         <div className="w-12 h-12 rounded-full bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center mx-auto mb-4">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-indigo-400">
             <polyline points="20,6 9,17 4,12" />
           </svg>
         </div>
-        <h3 className="text-slate-900 font-semibold text-lg mb-2">Thank you</h3>
-        <p className="text-slate-500 text-sm">We will be in touch shortly.</p>
+        <h3 className="text-slate-900 dark:text-slate-100 font-semibold text-lg mb-2">Thank you</h3>
+        <p className="text-slate-500 dark:text-slate-400 text-sm">We will be in touch shortly.</p>
       </div>
     );
   }
@@ -30,7 +30,7 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1.5">
+        <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
           Name
         </label>
         <input
@@ -39,12 +39,12 @@ export default function ContactForm() {
           required
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-full px-4 py-3 rounded-xl bg-slate-100 border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500/40 transition-all text-sm"
+          className="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 dark:focus:ring-indigo-500/40 focus:border-indigo-500/40 dark:focus:border-indigo-500/50 transition-all text-sm"
           placeholder="Your name"
         />
       </div>
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1.5">
+        <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
           Email
         </label>
         <input
@@ -53,12 +53,12 @@ export default function ContactForm() {
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full px-4 py-3 rounded-xl bg-slate-100 border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500/40 transition-all text-sm"
+          className="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 dark:focus:ring-indigo-500/40 focus:border-indigo-500/40 dark:focus:border-indigo-500/50 transition-all text-sm"
           placeholder="you@company.com"
         />
       </div>
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1.5">
+        <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
           Message
         </label>
         <textarea
@@ -67,7 +67,7 @@ export default function ContactForm() {
           rows={5}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="w-full px-4 py-3 rounded-xl bg-slate-100 border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500/40 transition-all text-sm resize-none"
+          className="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 dark:focus:ring-indigo-500/40 focus:border-indigo-500/40 dark:focus:border-indigo-500/50 transition-all text-sm resize-none"
           placeholder="Tell us about your experience and goals..."
         />
       </div>

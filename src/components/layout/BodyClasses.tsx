@@ -13,5 +13,5 @@ export default function BodyClasses({ children }: { children: React.ReactNode })
     body.classList.toggle("reduced-motion", reducedMotion);
   }, [theme, readabilityMode, reducedMotion]);
 
-  return <body className="min-h-full flex flex-col bg-slate-50">{children}</body>;
+  return <body className="min-h-full flex flex-col">{children}</body>;
 }

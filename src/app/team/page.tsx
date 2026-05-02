@@ -17,12 +17,12 @@ function TeamCard({ member, index }: { member: { name: string; role: string }; i
     return (
       <div
         ref={ref}
-        className="p-8 rounded-2xl bg-slate-100 border border-slate-200 hover:border-indigo-500/20 hover:bg-slate-50 transition-all duration-300 text-center"
+        className="p-8 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-indigo-500/20 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-all duration-300 text-center"
       >
         <div className="w-20 h-20 rounded-full bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center mx-auto mb-5">
           <span className="text-2xl font-bold text-indigo-400">{member.name.charAt(0)}</span>
         </div>
-        <h3 className="text-slate-900 font-semibold text-lg mb-1">{member.name}</h3>
+        <h3 className="text-slate-900 dark:text-slate-100 font-semibold text-lg mb-1">{member.name}</h3>
         <p className="text-indigo-400 text-sm font-medium">{member.role}</p>
       </div>
     );
@@ -34,12 +34,12 @@ function TeamCard({ member, index }: { member: { name: string; role: string }; i
       initial={{ opacity: 0, y: 50, scale: 0.95 }}
       animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
       transition={{ duration: 0.7, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
-      className="p-8 rounded-2xl bg-slate-100 border border-slate-200 hover:border-indigo-500/20 hover:bg-slate-50 transition-all duration-300 text-center"
+      className="p-8 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-indigo-500/20 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-all duration-300 text-center"
     >
       <div className="w-20 h-20 rounded-full bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center mx-auto mb-5">
         <span className="text-2xl font-bold text-indigo-400">{member.name.charAt(0)}</span>
       </div>
-      <h3 className="text-slate-900 font-semibold text-lg mb-1">{member.name}</h3>
+      <h3 className="text-slate-900 dark:text-slate-100 font-semibold text-lg mb-1">{member.name}</h3>
       <p className="text-indigo-400 text-sm font-medium">{member.role}</p>
     </motion.div>
   );
@@ -51,15 +51,15 @@ export default function TeamPage() {
   return (
     <>
       <section className="relative py-24 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-slate-50">
+        <div className="absolute inset-0 bg-slate-50 dark:bg-slate-950">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_70%_at_50%_30%,rgba(120,119,198,0.12),rgba(255,255,255,0))]" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <RevealBlock>
-            <AssembleText text="Our Team" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight mb-6" />
+            <AssembleText text="Our Team" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-slate-100 tracking-tight mb-6" />
           </RevealBlock>
           <RevealBlock delay={0.15}>
-            <p className="text-slate-500 text-base md:text-lg max-w-2xl mx-auto">
+            <p className="text-slate-500 dark:text-slate-400 text-base md:text-lg max-w-2xl mx-auto">
               The people who make Partnering for Equity possible.
             </p>
           </RevealBlock>

@@ -15,7 +15,7 @@ function HeroStrapLines() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-slate-50">
+      <div className="absolute inset-0 bg-slate-50 dark:bg-slate-950">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_70%_at_50%_30%,rgba(120,119,198,0.12),rgba(255,255,255,0))]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_50%_80%,rgba(147,51,234,0.06),rgba(255,255,255,0))]" />
       </div>
@@ -42,7 +42,7 @@ function HeroStrapLines() {
         </motion.div>
 
         <motion.h1
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-8 leading-[1.1]"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 dark:text-slate-100 mb-8 leading-[1.1]"
           initial={reducedMotion ? false : { opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
@@ -51,7 +51,7 @@ function HeroStrapLines() {
         </motion.h1>
 
         <motion.p
-          className="text-base md:text-lg text-slate-500 max-w-3xl mx-auto mb-6 leading-relaxed"
+          className="text-base md:text-lg text-slate-500 dark:text-slate-400 max-w-3xl mx-auto mb-6 leading-relaxed"
           initial={reducedMotion ? false : { opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -60,7 +60,7 @@ function HeroStrapLines() {
         </motion.p>
 
         <motion.p
-          className="text-base md:text-lg text-slate-500 max-w-3xl mx-auto mb-10 leading-relaxed"
+          className="text-base md:text-lg text-slate-500 dark:text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed"
           initial={reducedMotion ? false : { opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.0, ease: [0.16, 1, 0.3, 1] }}
@@ -83,7 +83,7 @@ function HeroStrapLines() {
           </Link>
           <Link
             href="/contact"
-            className="inline-flex items-center px-8 py-4 rounded-full bg-slate-100 backdrop-blur-md border border-slate-200 text-slate-900 font-medium text-sm md:text-base hover:bg-white hover:border-slate-300 transition-all duration-300 shadow-lg shadow-slate-200"
+            className="inline-flex items-center px-8 py-4 rounded-full bg-slate-100 dark:bg-slate-800 backdrop-blur-md border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 font-medium text-sm md:text-base hover:bg-white dark:hover:bg-slate-800 hover:border-slate-300 dark:hover:border-slate-600 transition-all duration-300 shadow-lg shadow-slate-200 dark:shadow-slate-950"
           >
             Contact us
           </Link>
@@ -103,10 +103,10 @@ function IntroSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div>
             <RevealBlock>
-              <AssembleText text="Why you should join us" className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight mb-6" />
+              <AssembleText text="Why you should join us" className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 tracking-tight mb-6" />
             </RevealBlock>
             <RevealBlock delay={0.2}>
-              <p className="text-slate-500 text-base md:text-lg leading-relaxed">
+              <p className="text-slate-500 dark:text-slate-400 text-base md:text-lg leading-relaxed">
                 {intro.body}
               </p>
             </RevealBlock>
@@ -116,8 +116,8 @@ function IntroSection() {
               <VideoPlaceholder title="Introduction video" />
             </RevealBlock>
             <RevealBlock delay={0.4}>
-              <div className="p-8 rounded-2xl bg-slate-100 border border-slate-200">
-                <h3 className="text-slate-900 font-semibold text-lg mb-4">{intro.cta}</h3>
+              <div className="p-8 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                <h3 className="text-slate-900 dark:text-slate-100 font-semibold text-lg mb-4">{intro.cta}</h3>
                 <ContactForm />
               </div>
             </RevealBlock>

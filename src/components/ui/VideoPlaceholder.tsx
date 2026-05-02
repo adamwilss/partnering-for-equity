@@ -15,7 +15,7 @@ export default function VideoPlaceholder({ title, className = "" }: VideoPlaceho
   const { reducedMotion } = useSettings();
 
   const content = (
-    <div className={`relative w-full rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 ${className}`}>
+    <div className={`relative w-full rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 ${className}`}>
       {title && (
         <div className="absolute top-4 left-4 z-10">
           <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-500/10 border border-indigo-500/20 text-indigo-400">
@@ -29,7 +29,7 @@ export default function VideoPlaceholder({ title, className = "" }: VideoPlaceho
             <polygon points="5,3 19,12 5,21" />
           </svg>
         </div>
-        <p className="text-slate-400 text-sm">Video coming soon</p>
+        <p className="text-slate-400 dark:text-slate-500 text-sm">Video coming soon</p>
       </div>
     </div>
   );

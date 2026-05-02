@@ -104,16 +104,16 @@ export default function IconBox({
     <div className={`group ${className}`}>
       <div className="mb-4 flex items-center gap-3">
         {number && (
-          <span className="text-4xl font-bold text-slate-200 group-hover:text-slate-300 transition-colors duration-500">
+          <span className="text-4xl font-bold text-slate-200 dark:text-slate-700 group-hover:text-slate-300 dark:group-hover:text-slate-600 transition-colors duration-500">
             {number}
           </span>
         )}
-        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500/10 to-purple-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 group-hover:text-indigo-300 group-hover:border-indigo-500/30 transition-all duration-300">
+        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500/10 to-purple-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 dark:text-indigo-300 group-hover:text-indigo-300 dark:group-hover:text-indigo-200 group-hover:border-indigo-500/30 dark:group-hover:border-indigo-500/40 transition-all duration-300">
           <Icon name={icon} />
         </div>
       </div>
-      <h3 className="text-slate-900 font-semibold text-lg mb-2">{title}</h3>
-      <p className="text-slate-2000 leading-relaxed text-sm md:text-base">
+      <h3 className="text-slate-900 dark:text-slate-100 font-semibold text-lg mb-2">{title}</h3>
+      <p className="text-slate-500 dark:text-slate-400 leading-relaxed text-sm md:text-base">
         {description}
       </p>
     </div>
